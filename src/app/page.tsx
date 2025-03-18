@@ -1,5 +1,6 @@
 import { ScrollButton } from '@/components/ScrollButton'
 import { EmailButton } from '@/components/EmailButton'
+import { LinkedInButton } from '@/components/LinkedInButton'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -26,19 +27,22 @@ export default function Home() {
             
             <h1 className="text-5xl font-bold">Ashwin Das Gururaja</h1>
             <p className="py-6 text-lg">Engineering Leader @ Adobe | Payments & Risk</p>
-            <div className="flex justify-center gap-4">
+            
+            {/* Action buttons */}
+            <div className="flex flex-wrap justify-center gap-3 max-w-md mx-auto">
               <ScrollButton
                 targetId="projects"
-                className="btn btn-primary"
+                className="btn btn-sm btn-primary px-4"
               >
                 View My Work
               </ScrollButton>
               <ScrollButton
                 targetId="contact"
-                className="btn btn-outline"
+                className="btn btn-sm btn-outline px-4"
               >
                 Contact Me
               </ScrollButton>
+              <LinkedInButton />
             </div>
           </div>
         </div>
