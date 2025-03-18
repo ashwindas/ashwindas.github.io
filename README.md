@@ -123,47 +123,38 @@ The favicon is linked explicitly in the HTML head and specified in the metadata 
 
 ## Testing
 
-The website includes comprehensive automated tests to ensure functionality, layout, styling, and responsiveness work correctly across different browsers and screen sizes.
+This project includes automated tests to ensure the website functions correctly. The tests are built with Cypress and run in a variety of ways.
 
 ### Running Tests
 
-There are several ways to run the tests:
+To run the tests locally, you can use the following commands:
 
-1. **Interactive Mode** - Opens the Cypress test runner with a visual interface:
-   ```bash
-   npm run test:interactive
-   ```
-
-2. **Headless Mode** - Runs all tests in the terminal (useful for CI/CD):
-   ```bash
-   npm run test:ci
-   ```
-
-3. **During Development** - Runs tests against the development server:
-   ```bash
-   npm run test:dev
-   ```
+- Interactive mode (with GUI): `./test.sh`
+- Headless mode (CI-style): `./test.sh --headless`
 
 ### Test Coverage
 
 The tests cover:
 
-- **Navigation** - All navigation links and scrolling functionality
-- **Responsiveness** - Layout adapts to different screen sizes
-- **Dark/Light Mode** - Theme toggle works correctly and styles are applied
-- **Content** - All required content is visible and properly formatted
-- **Interactions** - Buttons and links function as expected
-- **Email Protection** - Email obfuscation is working correctly
-- **CSS Styling** - DaisyUI components are rendered properly
-- **Privacy Policy** - Content and styling on the privacy page
+- Home page elements and functionality
+- Navigation components
+- Privacy policy page
+- Styling and visual elements
+- Responsive design
 
 ### Continuous Integration
 
-Tests run automatically:
-- During the build process when using `./deploy.sh`
-- In GitHub Actions workflow when changes are pushed to the main branch
+Tests automatically run on GitHub Actions when:
+- Pushing to the main branch
+- Creating a pull request targeting main
 
-This ensures that the website remains functional with every update.
+### Troubleshooting Tests
+
+If you encounter test failures:
+
+1. Check the screenshots in the `cypress/screenshots` directory
+2. Make sure the site builds correctly with `npm run build`
+3. Review the console output for specific errors
 
 ## License
 
