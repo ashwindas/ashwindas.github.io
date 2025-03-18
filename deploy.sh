@@ -26,6 +26,25 @@ if [ ! -f "public/favicon.ico" ]; then
   exit 1
 fi
 
+# Run tests
+echo -e "${YELLOW}Running automated tests...${NC}"
+npm run cypress:headless
+
+if [ $? -ne 0 ]; then
+  echo -e "${RED}Tests failed! Please fix the issues before deploying.${NC}"
+  echo -e "${YELLOW}To see detailed test results, run 'npm run cypress' for interactive mode.${NC}"
+  echo -e "${YELLOW}Do you want to continue with deployment anyway? (y/n)${NC}"
+  read -r continue_deploy
+  if [ "$continue_deploy" != "y" ]; then
+    echo -e "${RED}Deployment aborted.${NC}"
+    exit 1
+  else
+    echo -e "${YELLOW}Continuing with deployment despite test failures...${NC}"
+  fi
+else
+  echo -e "${GREEN}All tests passed!${NC}"
+fi
+
 # Run production build
 echo -e "${YELLOW}Building production version...${NC}"
 NODE_ENV=production npm run build

@@ -121,6 +121,50 @@ The favicon is linked explicitly in the HTML head and specified in the metadata 
 - **404 Page**: A custom 404 page is included for better user experience when pages aren't found.
 - **Favicon Issues**: Make sure favicon.ico is placed in the public directory, not in src/app. This is essential for proper static exports.
 
+## Testing
+
+The website includes comprehensive automated tests to ensure functionality, layout, styling, and responsiveness work correctly across different browsers and screen sizes.
+
+### Running Tests
+
+There are several ways to run the tests:
+
+1. **Interactive Mode** - Opens the Cypress test runner with a visual interface:
+   ```bash
+   npm run test:interactive
+   ```
+
+2. **Headless Mode** - Runs all tests in the terminal (useful for CI/CD):
+   ```bash
+   npm run test:ci
+   ```
+
+3. **During Development** - Runs tests against the development server:
+   ```bash
+   npm run test:dev
+   ```
+
+### Test Coverage
+
+The tests cover:
+
+- **Navigation** - All navigation links and scrolling functionality
+- **Responsiveness** - Layout adapts to different screen sizes
+- **Dark/Light Mode** - Theme toggle works correctly and styles are applied
+- **Content** - All required content is visible and properly formatted
+- **Interactions** - Buttons and links function as expected
+- **Email Protection** - Email obfuscation is working correctly
+- **CSS Styling** - DaisyUI components are rendered properly
+- **Privacy Policy** - Content and styling on the privacy page
+
+### Continuous Integration
+
+Tests run automatically:
+- During the build process when using `./deploy.sh`
+- In GitHub Actions workflow when changes are pushed to the main branch
+
+This ensures that the website remains functional with every update.
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
