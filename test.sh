@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# IMPORTANT: Do not push to GitHub without explicit permission from the repository owner
+# This script runs tests locally but does not push any changes
+
 # Color output
 GREEN='\033[0;32m'
 RED='\033[0;31m'

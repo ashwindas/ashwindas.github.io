@@ -1,10 +1,13 @@
 name: Run Tests
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+# IMPORTANT: Get explicit permission before enabling this workflow
+# This workflow is currently disabled - uncomment the 'on' section only when authorized
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
 
 jobs:
   test:

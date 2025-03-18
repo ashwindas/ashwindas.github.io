@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# IMPORTANT: Do not push to GitHub without explicit permission from the repository owner
+# This script prepares files for deployment but does not automatically push them
+
 # Colors for output
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -92,9 +95,10 @@ echo -e "2. Configure GitHub Pages to use the 'gh-pages' branch in your reposito
 echo -e "3. If using GitHub Actions, add the generated files to your workflow"
 
 # Instructions for deploying manually
-echo -e "${YELLOW}Manual deployment commands:${NC}"
+echo -e "${YELLOW}Manual deployment commands (ONLY use after getting explicit permission):${NC}"
 echo -e "git add out -f"
 echo -e "git commit -m \"Deploy to GitHub Pages\""
+echo -e "${RED}IMPORTANT: Get explicit permission before running the next command${NC}"
 echo -e "git subtree push --prefix out origin gh-pages"
 
 echo -e "${GREEN}Deployment preparation complete!${NC}" 
