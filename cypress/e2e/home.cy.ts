@@ -53,6 +53,24 @@ describe('Home Page', () => {
     });
   });
 
+  it('validates LinkedIn button functionality', () => {
+    // Check if LinkedIn button exists
+    cy.get('a[href="https://www.linkedin.com/in/ashwindas/"]')
+      .should('exist')
+      .and('have.attr', 'target', '_blank')
+      .and('have.attr', 'rel', 'noopener noreferrer')
+      .and('contain', 'LinkedIn')
+      
+    // Check that it has the correct styling
+    cy.get('a[href="https://www.linkedin.com/in/ashwindas/"]')
+      .should('have.class', 'btn-sm')
+      .and('have.css', 'background-color')
+      
+    // Ensure the LinkedIn icon is present
+    cy.get('a[href="https://www.linkedin.com/in/ashwindas/"] svg')
+      .should('exist')
+  });
+
   it('has responsive layout', () => {
     // Test desktop layout
     cy.viewport(1280, 720);
