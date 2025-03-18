@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* Adjust this to match your header height */
+}
+
+/* Target each section to add proper scroll offset */
+section[id] {
+  scroll-margin-top: 4rem; /* Adjust this to match your header height */
+}
+
+/* Fix for iOS momentum scrolling */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Fix for smooth scrolling in Firefox */
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+}
+
+/* Fix for Safari */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    html, body {
+      scroll-behavior: auto !important;
+    }
+    section[id] {
+      scroll-margin-top: 4rem;
+    }
+  }
+}
+
+/* Improve button focus styles */
+button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

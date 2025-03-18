@@ -1,0 +1,24 @@
+{
+  "repository": {
+    "name": "ashwindas.github.io",
+    "owner": "ashwindas",
+    "type": "personal-website"
+  },
+  "deployment": {
+    "requireExplicitPush": true,
+    "autoDeployDisabled": true,
+    "notes": "Do not push to GitHub repo until explicitly requested"
+  },
+  "contact": {
+    "email": "contact-via-website"
+  },
+  "buildSettings": {
+    "command": "npm run build:clean",
+    "outputDir": "out"
+  },
+  "gitWorkflow": {
+    "mainBranch": "main",
+    "deploymentBranch": "gh-pages",
+    "deployCommand": "git push -f origin `git subtree split --prefix out main`:gh-pages"
+  }
+} 
