@@ -1,0 +1,58 @@
+{
+  "hooks": {
+    "pre-push": {
+      "script": ".cursor/scripts/pre-push-confirm.js",
+      "enabled": true,
+      "blocking": true,
+      "priority": "high"
+    },
+    "pre-command": {
+      "patterns": ["git push", "npm publish", "yarn publish"],
+      "script": ".cursor/scripts/pre-push-confirm.js",
+      "enabled": true,
+      "blocking": true
+    }
+  },
+  "notifications": {
+    "push-warning": {
+      "title": "⚠️ ATTENTION: Remote Push Attempt",
+      "message": "You are about to push to a remote repository. Make sure you have explicit permission.",
+      "level": "warning",
+      "triggers": ["pre-push"]
+    }
+  },
+  "settings": {
+    "requireExplicitConfirmation": true,
+    "preventAutomaticPush": true,
+    "showWarningOnPush": true
+  },
+  "git": {
+    "hooks": {
+      "pre-command": {
+        "enabled": true,
+        "scripts": [
+          {
+            "name": "git-performance-monitor",
+            "path": ".cursor/scripts/git-hook-connector.js",
+            "condition": "command.startsWith('git')",
+            "async": false
+          },
+          {
+            "name": "check-git-performance",
+            "path": ".cursor/scripts/git-optimize.sh",
+            "condition": "duration > 5000",
+            "async": false
+          }
+        ]
+      }
+    },
+    "performance": {
+      "monitoring": {
+        "enabled": true,
+        "logSlowCommands": true,
+        "slowCommandThreshold": 3000,
+        "notifyOnSlowCommands": true
+      }
+    }
+  }
+} 
