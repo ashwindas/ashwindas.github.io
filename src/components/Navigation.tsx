@@ -85,44 +85,42 @@ export function Navigation() {
     <nav className="navbar bg-base-100 shadow-md fixed z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <button className="btn btn-ghost lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Navigation menu">
             {mobileMenuOpen ? (
               <XMarkIcon className="h-5 w-5" />
             ) : (
               <Bars3Icon className="h-5 w-5" />
             )}
-          </div>
-          {mobileMenuOpen && (
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
-                <ScrollButton
-                  targetId="about"
-                  className="text-base-content"
-                  onClick={() => handleSectionNav()}
-                >
-                  About
-                </ScrollButton>
-              </li>
-              <li>
-                <ScrollButton
-                  targetId="projects"
-                  className="text-base-content"
-                  onClick={() => handleSectionNav()}
-                >
-                  Projects
-                </ScrollButton>
-              </li>
-              <li>
-                <ScrollButton
-                  targetId="contact"
-                  className="text-base-content"
-                  onClick={() => handleSectionNav()}
-                >
-                  Contact
-                </ScrollButton>
-              </li>
-            </ul>
-          )}
+          </button>
+          <ul className={`menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-52 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+            <li>
+              <ScrollButton
+                targetId="about"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                About
+              </ScrollButton>
+            </li>
+            <li>
+              <ScrollButton
+                targetId="projects"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                Projects
+              </ScrollButton>
+            </li>
+            <li>
+              <ScrollButton
+                targetId="contact"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                Contact
+              </ScrollButton>
+            </li>
+          </ul>
         </div>
         <ScrollButton targetId="home" className="btn btn-ghost text-xl font-bold">
           ADG
