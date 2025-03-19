@@ -29,7 +29,7 @@ function GoogleAnalyticsInner() {
     if (pathname && window.gtag) {
       // Send pageview with updated path
       window.gtag('config', GA_MEASUREMENT_ID, {
-        page_path: pathname + searchParams.toString(),
+        page_path: pathname + (searchParams?.toString() || ''),
       })
     }
   }, [pathname, searchParams])
