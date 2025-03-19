@@ -55,9 +55,10 @@ export default function Home() {
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
             <div className="card-body">
               <p className="text-lg">
-                I&apos;m an Engineering Leader at Adobe specializing in Payments & Risk systems. 
-                With expertise in building secure, scalable financial infrastructure, I focus on creating 
-                reliable payment solutions and implementing effective risk management strategies.
+                Hi, I&apos;m Ashwin Das Gururaja, a Senior Engineering Manager at Adobe with over 15 years of experience driving technical excellence. My expertise spans building and scaling distributed systems, web application development, designing data-intensive applications that process millions of transactions daily, and implementing microservices architectures. I&apos;ve successfully applied AI solutions to real-world challenges, resulting in measurable efficiency gains across multiple production workflows.
+              </p>
+              <p className="text-lg mt-4">
+                I&apos;ve led globally distributed teams, architecting cloud-based solutions that have achieved 99.99% uptime while reducing operational costs. I&apos;ve driven high-impact innovations across Commerce Platform, Payments and Risk, Subscription Lifecycle, and Digital Publishing domains—translating complex business requirements into elegant technical solutions that have accelerated revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
               </p>
             </div>
           </div>
