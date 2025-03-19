@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Navigation } from "@/components/Navigation";
 import Script from "next/script";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
   // Create appropriate CSP based on environment
   const cspContent = isDevelopment
     ? "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss:; upgrade-insecure-requests;"
-    : "default-src https: 'self'; script-src https: 'self' 'unsafe-inline'; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self'; upgrade-insecure-requests;";
+    : "default-src https: 'self'; script-src https: 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self' https://www.google-analytics.com; upgrade-insecure-requests;";
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -58,6 +59,7 @@ export default function RootLayout({
             <main>{children}</main>
           </div>
         </Providers>
+        {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
       </body>
     </html>
   );
