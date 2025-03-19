@@ -25,34 +25,5 @@
     "requireExplicitConfirmation": true,
     "preventAutomaticPush": true,
     "showWarningOnPush": true
-  },
-  "git": {
-    "hooks": {
-      "pre-command": {
-        "enabled": true,
-        "scripts": [
-          {
-            "name": "git-performance-monitor",
-            "path": ".cursor/scripts/git-hook-connector.js",
-            "condition": "command.startsWith('git')",
-            "async": false
-          },
-          {
-            "name": "check-git-performance",
-            "path": ".cursor/scripts/git-optimize.sh",
-            "condition": "duration > 5000",
-            "async": false
-          }
-        ]
-      }
-    },
-    "performance": {
-      "monitoring": {
-        "enabled": true,
-        "logSlowCommands": true,
-        "slowCommandThreshold": 3000,
-        "notifyOnSlowCommands": true
-      }
-    }
   }
 } 

@@ -6,16 +6,19 @@
     "blockAutomaticPush": true
   },
   "git": {
-    "safeCommands": ["status", "log", "diff", "fetch", "pull", "branch", "checkout", "stash"],
-    "dangerousCommands": ["push", "reset --hard", "clean -f"],
+    "requireGitPushConfirmation": true,
+    "safeCommands": [
+      "git status",
+      "git log",
+      "git branch",
+      "git diff"
+    ],
+    "dangerousCommands": [
+      "git push",
+      "git reset --hard"
+    ],
     "requireConfirmationForDangerousCommands": true,
-    "warnBeforePush": true,
-    "performance": {
-      "slowOperationThreshold": 3000,
-      "optimizationScript": ".cursor/scripts/git-optimize.sh",
-      "autoOptimize": true,
-      "monitorCommands": ["status", "pull", "push", "fetch", "diff", "log"]
-    }
+    "warnBeforePush": true
   },
   "deployment": {
     "requireExplicitPush": true,

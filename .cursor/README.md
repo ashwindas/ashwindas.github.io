@@ -64,48 +64,38 @@ These security measures are in place to protect the repository. Do not modify or
 
 # Cursor Git Performance Optimization
 
-This directory contains scripts and configuration to automatically optimize Git performance when operations are slow. The system monitors Git commands and performs garbage collection when necessary.
+This directory contains scripts to manually optimize Git performance when needed.
 
 ## Features
 
-- Automatic detection of slow Git commands
-- Performance monitoring for common Git operations
-- Automatic repository optimization when multiple slow operations are detected
-- Configurable thresholds and monitored commands
+- On-demand repository optimization
+- Garbage collection, pruning, and repacking
+- Script can be executed manually when Git operations become slow
 
 ## Components
 
 ### Scripts
 
 - `git-optimize.sh`: Performs Git garbage collection and repository optimization
-- `git-performance-monitor.js`: Monitors Git command performance and tracks statistics
-- `git-hook-connector.js`: Connects Cursor hooks with Git operations
 - `pre-push-confirm.js`: Pre-push hook to run tests before pushing
 
 ### Configuration
 
-- `config.json`: Contains Git performance monitoring settings
+- `config.json`: Contains Git command safety settings
 - `hooks.json`: Configures hook scripts and their triggers
-- `git-performance-stats.json`: Tracks statistics about slow operations
 
 ## How It Works
 
-1. When a Git command is executed, the `git-hook-connector.js` script is triggered
-2. The connector passes the command to the performance monitor
-3. If the command is slow (exceeds the threshold), it's recorded in the stats file
-4. If multiple slow operations are detected, the optimization script runs automatically
-5. Optimization includes garbage collection, pruning, and repacking
+The Git optimization script performs several tasks to improve repository performance:
 
-## Configuration Options
-
-In `config.json`:
-- `slowOperationThreshold`: Time in milliseconds before a command is considered slow (default: 3000)
-- `autoOptimize`: Enable/disable automatic optimization (default: true)
-- `monitorCommands`: List of Git commands to monitor
+1. Garbage collection to clean up unnecessary files
+2. Pruning of unreachable objects
+3. Aggressive repacking to optimize storage
+4. Repository integrity check
 
 ## Manual Optimization
 
-You can manually run the optimization script at any time:
+You can run the optimization script at any time:
 
 ```bash
 .cursor/scripts/git-optimize.sh
@@ -116,6 +106,15 @@ For more aggressive optimization (useful for very large repositories):
 ```bash
 git gc --aggressive
 ```
+
+## When to Use Optimization
+
+Consider running Git optimization when:
+
+1. Git commands are noticeably slow
+2. After removing large files from the repository
+3. After making significant changes to many files
+4. Periodically (monthly) for actively developed repositories
 
 ## Troubleshooting
 
