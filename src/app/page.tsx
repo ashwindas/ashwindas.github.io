@@ -79,7 +79,7 @@ export default function Home() {
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
             <div className="card-body text-center">
               <p className="text-lg mb-6">
-                I enjoy capturing moments through photography. Check out my portfolio on 500px:
+                Photography is my occasional creative outlet. View my portfolio on 500px:
               </p>
               <div className="flex justify-center">
                 <FiveHundredPxButton />
