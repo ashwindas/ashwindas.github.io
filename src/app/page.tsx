@@ -37,6 +37,12 @@ export default function Home() {
                 About Me
               </ScrollButton>
               <ScrollButton
+                targetId="photography"
+                className="btn btn-sm btn-primary px-4"
+              >
+                Photography
+              </ScrollButton>
+              <ScrollButton
                 targetId="contact"
                 className="btn btn-sm btn-outline px-4"
               >
@@ -60,6 +66,30 @@ export default function Home() {
               <p className="text-lg mt-4">
                 I&apos;ve led globally distributed teams, architecting cloud-based solutions that have achieved 99.99% uptime while reducing operational costs. I&apos;ve driven high-impact innovations across Commerce Platform, Payments and Risk, Subscription Lifecycle, and Digital Publishing domains—translating complex business requirements into elegant technical solutions that have accelerated revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photography Section */}
+      <section id="photography" className="py-24 bg-base-100 dark:bg-base-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center">Photography</h2>
+          <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
+            <div className="card-body text-center">
+              <p className="text-lg mb-6">
+                I enjoy capturing moments through photography. Check out my portfolio on 500px:
+              </p>
+              <div className="flex justify-center">
+                <a 
+                  href="https://500px.com/p/AshwinDas" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-primary"
+                >
+                  View My Photos
+                </a>
+              </div>
             </div>
           </div>
         </div>
