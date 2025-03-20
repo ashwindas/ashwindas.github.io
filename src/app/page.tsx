@@ -1,6 +1,7 @@
 import { ScrollButton } from '@/components/ScrollButton'
 import { EmailButton } from '@/components/EmailButton'
 import { LinkedInButton } from '@/components/LinkedInButton'
+import { FiveHundredPxButton } from '@/components/FiveHundredPxButton'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -81,14 +82,7 @@ export default function Home() {
                 I enjoy capturing moments through photography. Check out my portfolio on 500px:
               </p>
               <div className="flex justify-center">
-                <a 
-                  href="https://500px.com/p/AshwinDas" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn btn-primary"
-                >
-                  View My Photos
-                </a>
+                <FiveHundredPxButton />
               </div>
             </div>
           </div>
