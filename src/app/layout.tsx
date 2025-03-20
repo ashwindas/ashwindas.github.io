@@ -9,10 +9,39 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ashwin Das Gururaja | Engineering Leader @ Adobe | Payments & Risk",
-  description: "Welcome to my personal portfolio website. Explore my projects, skills, and experiences as an Engineering Leader at Adobe focusing on Payments & Risk.",
-  keywords: ["portfolio", "engineering leader", "Adobe", "payments", "risk", "software engineer", "web development"],
+  title: "Ashwin Das Gururaja | Engineering Leader at Adobe | Payments & Risk",
+  description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions at Adobe.",
+  keywords: ["engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions"],
   metadataBase: new URL('https://ashwindas.github.io'),
+  authors: [{ name: "Ashwin Das Gururaja" }],
+  creator: "Ashwin Das Gururaja",
+  publisher: "Ashwin Das Gururaja",
+  openGraph: {
+    title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
+    description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions.",
+    url: 'https://ashwindas.github.io',
+    siteName: 'Ashwin Das Gururaja Portfolio',
+    images: [
+      {
+        url: 'https://ashwindas.github.io/images/headshot.jpg',
+        width: 200,
+        height: 200,
+        alt: 'Ashwin Das Gururaja',
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
+    description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions.",
+    images: ['https://ashwindas.github.io/images/headshot.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -45,6 +74,27 @@ export default function RootLayout({
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* Structured Data for Person Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Ashwin Das Gururaja",
+              "jobTitle": "Senior Engineering Manager",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Adobe"
+              },
+              "description": "Engineering Leader with over 15 years of experience driving technical excellence in distributed systems, payments and risk management.",
+              "url": "https://ashwindas.github.io",
+              "knowsAbout": ["Engineering Management", "Distributed Systems", "Payments", "Risk Management", "AI Solutions"]
+            }
+            `
+          }}
+        />
         {/* Theme helper script using Next.js Script component */}
         <Script 
           id="theme-helper" 
@@ -54,9 +104,21 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Providers>
-          <div className="min-h-screen bg-base-100 dark:bg-gray-900 text-base-content dark:text-gray-100">
-            <Navigation />
-            <main>{children}</main>
+          <div className="min-h-screen bg-base-100 dark:bg-gray-900 text-base-content dark:text-gray-100 flex flex-col">
+            <header>
+              <Navigation />
+            </header>
+            <main className="flex-grow">{children}</main>
+            <footer className="bg-base-200 dark:bg-base-300 py-6">
+              <div className="container mx-auto px-4 text-center">
+                <p className="text-sm">
+                  &copy; {new Date().getFullYear()} Ashwin Das Gururaja. All Rights Reserved.
+                </p>
+                <p className="text-xs mt-2">
+                  <a href="/privacy.html" className="link link-hover link-primary">Privacy Policy</a>
+                </p>
+              </div>
+            </footer>
           </div>
         </Providers>
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
