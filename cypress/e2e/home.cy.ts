@@ -18,6 +18,7 @@ describe('Home Page', () => {
     
     // Check that other main sections exist
     cy.get('section#about').should('exist');
+    cy.get('section#photography').should('exist');
     cy.get('section#contact').should('exist');
   });
 
@@ -27,6 +28,7 @@ describe('Home Page', () => {
     
     // Check for presence of buttons without clicking them
     cy.contains('About Me').should('exist');
+    cy.contains('Photography').should('exist');
     cy.contains('Contact Me').should('exist');
   });
 
