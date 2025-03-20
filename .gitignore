@@ -1,11 +1,4 @@
-# Ignore Cursor IDE settings but keep our optimization scripts
-.cursor/*
-!.cursor/scripts/
-!.cursor/README.md
-!.cursor/hooks.json
-!.cursor/config.json
-
-# Build outputs and dependencies
+.cursor/
 out/
 .next/
 node_modules/

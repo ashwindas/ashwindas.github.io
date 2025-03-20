@@ -6,17 +6,8 @@
     "blockAutomaticPush": true
   },
   "git": {
-    "requireGitPushConfirmation": true,
-    "safeCommands": [
-      "git status",
-      "git log",
-      "git branch",
-      "git diff"
-    ],
-    "dangerousCommands": [
-      "git push",
-      "git reset --hard"
-    ],
+    "safeCommands": ["status", "log", "diff", "fetch", "pull", "branch", "checkout", "stash"],
+    "dangerousCommands": ["push", "reset --hard", "clean -f"],
     "requireConfirmationForDangerousCommands": true,
     "warnBeforePush": true
   },
@@ -31,11 +22,6 @@
   },
   "editor": {
     "showWarningOnPush": true,
-    "pushConfirmationDialog": true,
-    "formatOnSave": true,
-    "autoSave": true
-  },
-  "ai": {
-    "useLocalContext": true
+    "pushConfirmationDialog": true
   }
 } 

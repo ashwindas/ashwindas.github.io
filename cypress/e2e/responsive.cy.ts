@@ -41,9 +41,8 @@ describe('Responsive Design and Mobile Navigation', () => {
       cy.get('.dropdown-content').should('have.class', 'block');
       
       // Check that all navigation links are present
-      cy.get('.dropdown-content li').should('have.length', 3);
+      cy.get('.dropdown-content li').should('have.length', 2);
       cy.get('.dropdown-content').contains('About').should('be.visible');
-      cy.get('.dropdown-content').contains('Projects').should('be.visible');
       cy.get('.dropdown-content').contains('Contact').should('be.visible');
       
       // Click a navigation item
@@ -69,43 +68,23 @@ describe('Responsive Design and Mobile Navigation', () => {
 
     it('has accessible buttons on mobile', () => {
       // Check action buttons are visible and accessible
-      cy.contains('View My Work').should('be.visible');
+      cy.contains('About Me').should('be.visible');
       cy.contains('Contact Me').should('be.visible');
       cy.contains('LinkedIn').should('be.visible');
       
       // Check that buttons or links are clickable
-      cy.contains('View My Work').should('exist');
+      cy.contains('About Me').should('exist');
       cy.contains('Contact Me').should('exist');
       
       // Navigate to the section to verify the buttons work
-      cy.contains('View My Work').click();
-      cy.get('section#projects').should('be.visible');
-    });
-
-    it('has properly sized project cards on mobile', () => {
-      // Navigate to project section
-      cy.get('section#projects').scrollIntoView().should('be.visible');
-      
-      // Check that project cards fit within the mobile viewport
-      cy.get('section#projects .card').each(($card) => {
-        expect($card.width()).to.be.at.most(viewports.mobile[0]);
-      });
+      cy.contains('About Me').click();
+      cy.get('section#about').should('be.visible');
     });
   });
 
   context('Tablet Layout Tests', () => {
     beforeEach(() => {
       cy.viewport(viewports.tablet[0], viewports.tablet[1]);
-    });
-
-    it('displays the proper grid layout for projects on tablet', () => {
-      cy.get('section#projects').scrollIntoView();
-      
-      // On tablet, we might expect a 2-column grid
-      cy.get('section#projects .grid').should('exist');
-      
-      // Check that the grid has appropriate column styles for tablet
-      cy.get('section#projects .grid').should('have.class', 'md:grid-cols-2');
     });
 
     it('has proper spacing between sections on tablet', () => {
@@ -154,11 +133,22 @@ describe('Responsive Design and Mobile Navigation', () => {
     });
 
     it('has fluid typography that scales across devices', () => {
-      // Test font size scaling across devices
-      [viewports.desktop, viewports.tablet, viewports.mobile].forEach((size) => {
-        cy.viewport(size[0], size[1]);
-        cy.get('h1').should('be.visible');
-        cy.get('p').should('be.visible');
+      // Desktop font size
+      cy.viewport(viewports.desktop[0], viewports.desktop[1]);
+      cy.get('h1').should('be.visible');
+      let desktopFontSize: number;
+      cy.get('h1').then(($h1) => {
+        desktopFontSize = parseFloat($h1.css('font-size'));
+      });
+      
+      // Mobile font size
+      cy.viewport(viewports.mobile[0], viewports.mobile[1]);
+      cy.get('h1').should('be.visible');
+      cy.get('h1').then(($h1) => {
+        const mobileFontSize = parseFloat($h1.css('font-size'));
+        // Mobile font should be smaller than desktop but still accessible
+        expect(mobileFontSize).to.be.at.most(desktopFontSize);
+        expect(mobileFontSize).to.be.at.least(20); // Minimum readable size
       });
     });
   });

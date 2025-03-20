@@ -104,15 +104,6 @@ export function Navigation() {
             </li>
             <li>
               <ScrollButton
-                targetId="projects"
-                className="text-base-content"
-                onClick={() => handleSectionNav()}
-              >
-                Projects
-              </ScrollButton>
-            </li>
-            <li>
-              <ScrollButton
                 targetId="contact"
                 className="text-base-content"
                 onClick={() => handleSectionNav()}
@@ -134,14 +125,6 @@ export function Navigation() {
               className="text-base-content"
             >
               About
-            </ScrollButton>
-          </li>
-          <li>
-            <ScrollButton
-              targetId="projects"
-              className="text-base-content"
-            >
-              Projects
             </ScrollButton>
           </li>
           <li>

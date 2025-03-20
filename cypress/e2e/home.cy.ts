@@ -17,7 +17,7 @@ describe('Home Page', () => {
       .and('have.attr', 'alt', 'Ashwin Das Gururaja');
     
     // Check that other main sections exist
-    cy.get('section#projects').should('exist');
+    cy.get('section#about').should('exist');
     cy.get('section#contact').should('exist');
   });
 
@@ -26,7 +26,7 @@ describe('Home Page', () => {
     cy.get('a').should('exist');
     
     // Check for presence of buttons without clicking them
-    cy.contains('View My Work').should('exist');
+    cy.contains('About Me').should('exist');
     cy.contains('Contact Me').should('exist');
   });
 
