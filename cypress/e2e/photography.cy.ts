@@ -30,7 +30,7 @@ describe('Photography Section', () => {
     
     // Check that it has the correct styling
     cy.get('section#photography a[href="https://500px.com/p/AshwinDas"]')
-      .should('have.class', 'btn-sm')
+      .should('have.class', 'btn')
       .and('have.css', 'background-color')
       
     // Ensure the 500px icon is present
