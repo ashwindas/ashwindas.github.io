@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem; /* Adjust this to match your header height */
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* Target each section to add proper scroll offset */
@@ -46,4 +47,36 @@ section[id] {
 button:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Ensure text content is always visible during theme transitions */
+.text-base-content {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Apply fallback text colors if needed */
+p, h1, h2, h3, h4, h5, h6 {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Ensure light mode text colors */
+html.light p, 
+html.light h1, 
+html.light h2, 
+html.light h3, 
+html.light h4, 
+html.light h5, 
+html.light h6 {
+  color: var(--text-color-light, #1f2937);
+}
+
+/* Ensure dark mode text colors */
+html.dark p, 
+html.dark h1, 
+html.dark h2, 
+html.dark h3, 
+html.dark h4, 
+html.dark h5, 
+html.dark h6 {
+  color: var(--text-color-dark, #f9fafb);
 }

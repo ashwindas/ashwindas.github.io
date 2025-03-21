@@ -70,10 +70,20 @@ export function Navigation() {
         document.documentElement.classList.add('dark')
         document.documentElement.classList.remove('light')
         document.documentElement.setAttribute('data-theme', 'dark')
+        
+        // Explicitly update text colors for dark mode
+        document.querySelectorAll('.text-base-content').forEach(el => {
+          el.classList.add('text-gray-100')
+        })
       } else {
         document.documentElement.classList.remove('dark')
         document.documentElement.classList.add('light')
         document.documentElement.setAttribute('data-theme', 'light')
+        
+        // Explicitly update text colors for light mode
+        document.querySelectorAll('.text-gray-100').forEach(el => {
+          el.classList.remove('text-gray-100')
+        })
       }
     } catch (error) {
       console.error('Error toggling theme:', error)

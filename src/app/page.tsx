@@ -13,43 +13,35 @@ export default function Home() {
         <div className="hero-content text-center">
           <div className="max-w-md">
             {/* Profile image with DaisyUI avatar */}
-            <div className="avatar mb-8">
-              <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
+            <div className="avatar mb-5">
+              <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto overflow-hidden">
                 <Image
                   src="/images/headshot.jpg"
                   alt="Ashwin Das Gururaja"
-                  width={200}
-                  height={200}
-                  className="object-cover"
+                  width={128}
+                  height={128}
                   priority
                 />
               </div>
             </div>
             
-            <h1 className="text-5xl font-bold">Ashwin Das Gururaja</h1>
-            <p className="py-6 text-lg">Engineering Leader @ Adobe | Payments & Risk</p>
+            <h1 className="text-5xl font-bold text-base-content dark:text-gray-100">Ashwin Das Gururaja</h1>
+            <p className="py-6 text-lg text-base-content dark:text-gray-200">Engineering Leader @ Adobe | Payments & Risk</p>
             
             {/* Action buttons */}
-            <div className="flex flex-wrap justify-center gap-3 max-w-md mx-auto">
+            <div className="flex flex-wrap justify-center gap-2">
               <ScrollButton
                 targetId="about"
-                className="btn btn-sm btn-primary px-4"
+                className="btn btn-primary"
               >
                 About Me
               </ScrollButton>
               <ScrollButton
                 targetId="photography"
-                className="btn btn-sm btn-primary px-4"
+                className="btn btn-primary"
               >
                 Photography
               </ScrollButton>
-              <ScrollButton
-                targetId="contact"
-                className="btn btn-sm btn-outline px-4"
-              >
-                Contact Me
-              </ScrollButton>
-              <LinkedInButton />
             </div>
           </div>
         </div>
@@ -58,14 +50,14 @@ export default function Home() {
       {/* About Section with DaisyUI card */}
       <section id="about" className="py-24 bg-base-100 dark:bg-base-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">About Me</h2>
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
             <div className="card-body">
-              <p className="text-lg">
-                Hi, I&apos;m Ashwin Das Gururaja, a Senior Engineering Manager at Adobe with over 15 years of experience driving technical excellence. My expertise spans building and scaling distributed systems, web application development, designing data-intensive applications that process millions of transactions daily, and implementing microservices architectures. I&apos;ve successfully applied AI solutions to real-world challenges, resulting in measurable efficiency gains across multiple production workflows.
+              <p className="text-lg text-base-content dark:text-gray-200">
+                I&apos;m a Senior Engineering Manager at Adobe leading the Payments, Risk, and Intelligence team. With over 15 years of experience, I specialize in building and scaling distributed systems that process billions in transactions while preventing fraud and managing risk.
               </p>
-              <p className="text-lg mt-4">
-                I&apos;ve led globally distributed teams, architecting cloud-based solutions that have achieved 99.99% uptime while reducing operational costs. I&apos;ve driven high-impact innovations across Commerce Platform, Payments and Risk, Subscription Lifecycle, and Digital Publishing domains—translating complex business requirements into elegant technical solutions that have accelerated revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
+              <p className="text-lg mt-4 text-base-content dark:text-gray-200">
+                My expertise spans engineering leadership, building high-performing teams, and driving technical excellence. I&apos;ve partnered with product teams to develop innovative solutions that accelerate revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
               </p>
             </div>
           </div>
@@ -75,10 +67,10 @@ export default function Home() {
       {/* Photography Section */}
       <section id="photography" className="py-24 bg-base-100 dark:bg-base-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Photography</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Photography</h2>
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
             <div className="card-body text-center">
-              <p className="text-lg mb-6">
+              <p className="text-lg mb-6 text-base-content dark:text-gray-200">
                 Photography is my occasional creative outlet. View my portfolio on 500px:
               </p>
               <div className="flex justify-center">
@@ -92,17 +84,18 @@ export default function Home() {
       {/* Contact Section with DaisyUI elements */}
       <section id="contact" className="py-24 bg-base-200 dark:bg-base-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Get In Touch</h2>
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-md mx-auto">
             <div className="card-body">
-              <p className="text-lg mb-6 text-center">
-                I&apos;m always open to new opportunities and collaborations.
+              <p className="text-lg mb-6 text-center text-base-content dark:text-gray-200">
+                Feel free to reach out through LinkedIn or email:
               </p>
-              <div className="form-control">
+              <div className="flex justify-center space-x-4">
+                <LinkedInButton />
                 <EmailButton />
               </div>
-              <p className="mt-6 text-sm text-center opacity-75">
-                By contacting me, you agree to my <a href="/privacy.html" className="link link-hover link-primary">Privacy Policy</a>.
+              <p className="mt-6 text-sm text-center opacity-75 text-base-content dark:text-gray-300">
+                I&apos;ll respond to professional inquiries as soon as possible.
               </p>
             </div>
           </div>

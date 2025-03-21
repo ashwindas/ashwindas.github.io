@@ -29,7 +29,7 @@ describe('Home Page', () => {
     // Check for presence of buttons without clicking them
     cy.contains('About Me').should('exist');
     cy.contains('Photography').should('exist');
-    cy.contains('Contact Me').should('exist');
+    cy.get('section#contact').should('exist');
   });
 
   it('has a working theme toggle', () => {

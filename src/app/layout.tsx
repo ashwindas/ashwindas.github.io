@@ -146,13 +146,13 @@ export default function RootLayout({
             <header>
               <Navigation />
             </header>
-            <main className="flex-grow">{children}</main>
-            <footer className="bg-base-200 dark:bg-base-300 py-6">
+            <main className="flex-grow text-base-content dark:text-gray-100">{children}</main>
+            <footer className="bg-base-200 dark:bg-base-300 py-6 text-base-content dark:text-gray-200">
               <div className="container mx-auto px-4 text-center">
-                <p className="text-sm">
+                <p className="text-sm text-base-content dark:text-gray-200">
                   &copy; {new Date().getFullYear()} Ashwin Das Gururaja. All Rights Reserved.
                 </p>
-                <p className="text-xs mt-2">
+                <p className="text-xs mt-2 text-base-content dark:text-gray-200">
                   <a href="/privacy.html" className="link link-hover link-primary">Privacy Policy</a>
                 </p>
               </div>
