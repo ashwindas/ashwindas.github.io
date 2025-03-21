@@ -3,10 +3,9 @@
   try {
     // Check for saved theme preference in localStorage
     const savedTheme = localStorage.getItem('theme-preference');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Determine theme based on saved preference or system preference
-    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    // Default to dark mode if no preference is saved
+    const theme = savedTheme || 'dark';
     
     // Apply the theme immediately
     if (theme === 'dark') {
