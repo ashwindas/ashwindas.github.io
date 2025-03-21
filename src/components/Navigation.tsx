@@ -13,7 +13,19 @@ export function Navigation() {
   // Fix for hydration mismatch
   useEffect(() => {
     setMounted(true)
-  }, [])
+    
+    // Log initial theme state when component mounts
+    const initialTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const dataTheme = document.documentElement.getAttribute('data-theme');
+    const storedTheme = localStorage.getItem('theme-preference');
+    console.log('Initial theme state:', {
+      cssClass: initialTheme,
+      dataTheme: dataTheme,
+      localStorage: storedTheme,
+      resolvedTheme: resolvedTheme,
+      nextThemes: theme
+    });
+  }, [resolvedTheme, theme])
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -46,6 +58,8 @@ export function Navigation() {
     try {
       const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
       console.log('Changing theme from', resolvedTheme, 'to', newTheme)
+      
+      // Set theme with the next-themes provider
       setTheme(newTheme)
       
       // Use localStorage directly as a backup mechanism

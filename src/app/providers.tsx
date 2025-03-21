@@ -3,6 +3,13 @@
 import { ThemeProvider } from 'next-themes'
 import { ReactNode, useEffect, useState } from 'react'
 
+// Add global type declaration for window.__theme
+declare global {
+  interface Window {
+    __theme?: string;
+  }
+}
+
 export function Providers({ children }: { children: ReactNode }) {
   // Added state for client-side rendering check
   const [mounted, setMounted] = useState(false)
@@ -98,18 +105,32 @@ export function Providers({ children }: { children: ReactNode }) {
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         
         // Get stored theme from localStorage or use system preference
-        const storedTheme = localStorage.getItem('theme');
+        const storedTheme = localStorage.getItem('theme-preference');
         const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
         
         // Apply theme to document element
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.classList.remove('light');
         } else {
           document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+          document.documentElement.setAttribute('data-theme', 'light');
         }
+        
+        // Ensure it's saved to localStorage
+        localStorage.setItem('theme-preference', theme);
       };
       
       checkTheme();
+      
+      // Also listen for system preference changes
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = () => checkTheme();
+      mediaQuery.addEventListener('change', handleChange);
+      
+      return () => mediaQuery.removeEventListener('change', handleChange);
     } catch (error) {
       console.error('Error checking theme:', error);
     }
@@ -127,8 +148,9 @@ export function Providers({ children }: { children: ReactNode }) {
       enableSystem={true}
       storageKey="theme-preference"
       themes={['light', 'dark']}
-      // Force the theme to re-render when the component mounts
       disableTransitionOnChange
+      enableColorScheme={true}
+      forcedTheme={typeof window !== 'undefined' && window.__theme ? window.__theme : undefined}
     >
       {children}
     </ThemeProvider>

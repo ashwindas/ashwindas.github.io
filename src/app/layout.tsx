@@ -65,7 +65,51 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        <meta name="description" content="Ashwin Das is a software engineer and tech leader with expertise in distributed systems, developer productivity, and engineering leadership." />
+        
+        {/* Add color-scheme meta tag to ensure proper theme detection */}
+        <meta name="color-scheme" content="dark light" />
+        
+        {/* Add theme-color meta tag for mobile browsers */}
+        <meta name="theme-color" content="#ffffff" data-mode="light" />
+        <meta name="theme-color" content="#1f2937" data-mode="dark" />
+        
+        {/* Theme helper script using Next.js Script component */}
+        <Script
+          id="theme-helper"
+          src="/theme-helper.js"
+          strategy="beforeInteractive"
+        />
+        
+        {/* Preload dark mode detection */}
+        <Script id="theme-preload" strategy="beforeInteractive">{`
+          (function() {
+            try {
+              // Try to read theme preference
+              const savedTheme = localStorage.getItem('theme-preference');
+              const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+              
+              // Set color scheme for browsers
+              document.querySelector('meta[name="color-scheme"]').content = initialTheme === 'dark' ? 'dark light' : 'light dark';
+              
+              // Toggle the correct theme-color meta tag
+              const metaThemeColorLight = document.querySelector('meta[name="theme-color"][data-mode="light"]');
+              const metaThemeColorDark = document.querySelector('meta[name="theme-color"][data-mode="dark"]');
+              
+              if (initialTheme === 'dark') {
+                metaThemeColorLight.remove();
+              } else {
+                metaThemeColorDark.remove();
+              }
+            } catch(e) {
+              console.warn('Early theme detection error:', e);
+            }
+          })();
+        `}</Script>
         <meta 
           httpEquiv="Content-Security-Policy" 
           content={cspContent}
@@ -94,12 +138,6 @@ export default function RootLayout({
             }
             `
           }}
-        />
-        {/* Theme helper script using Next.js Script component */}
-        <Script 
-          id="theme-helper" 
-          src="/theme-helper.js"
-          strategy="beforeInteractive"
         />
       </head>
       <body className={inter.className}>

@@ -15,7 +15,15 @@
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('data-theme', 'light');
+      // Explicitly set light theme classes
+      document.documentElement.classList.add('light');
     }
+    
+    // Store the applied theme to ensure consistency
+    localStorage.setItem('theme-preference', theme);
+    
+    // Make the theme available to the application immediately
+    window.__theme = theme;
   } catch (e) {
     // Fallback if localStorage is not available
     console.warn('Theme helper script error:', e);
