@@ -101,12 +101,9 @@ export function Providers({ children }: { children: ReactNode }) {
     try {
       // Force theme check
       const checkTheme = () => {
-        // Check if dark mode is preferred by system
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
-        // Get stored theme from localStorage or use system preference
+        // Get stored theme from localStorage or default to dark
         const storedTheme = localStorage.getItem('theme-preference');
-        const theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        const theme = storedTheme || 'dark';
         
         // Apply theme to document element
         if (theme === 'dark') {
@@ -144,8 +141,8 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider 
       attribute="class"
-      defaultTheme="system"
-      enableSystem={true}
+      defaultTheme="dark"
+      enableSystem={false}
       storageKey="theme-preference"
       themes={['light', 'dark']}
       disableTransitionOnChange

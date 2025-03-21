@@ -90,8 +90,8 @@ export default function RootLayout({
             try {
               // Try to read theme preference
               const savedTheme = localStorage.getItem('theme-preference');
-              const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+              // Default to dark rather than using system preference
+              const initialTheme = savedTheme || 'dark';
               
               // Set color scheme for browsers
               document.querySelector('meta[name="color-scheme"]').content = initialTheme === 'dark' ? 'dark light' : 'light dark';
