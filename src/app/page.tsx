@@ -42,6 +42,7 @@ export default function Home() {
               >
                 Photography
               </ScrollButton>
+              <LinkedInButton />
             </div>
           </div>
         </div>
