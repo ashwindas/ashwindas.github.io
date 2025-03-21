@@ -132,9 +132,10 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Adobe"
               },
-              "description": "Engineering Leader with over 15 years of experience driving technical excellence in distributed systems, payments and risk management.",
+              "description": "Engineering Leader with over 15 years of experience driving technical excellence in distributed systems, payments and risk management. Outside of work, a father of two who enjoys podcasts, non-fiction books, and hiking.",
               "url": "https://ashwindas.github.io",
-              "knowsAbout": ["Engineering Management", "Distributed Systems", "Payments", "Risk Management", "AI Solutions"]
+              "knowsAbout": ["Engineering Management", "Distributed Systems", "Payments", "Risk Management", "AI Solutions"],
+              "hobbies": ["Podcasts", "Reading Non-Fiction", "Hiking", "Photography"]
             }
             `
           }}

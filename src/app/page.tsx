@@ -59,6 +59,9 @@ export default function Home() {
               <p className="text-lg mt-4 text-base-content dark:text-gray-200">
                 My expertise spans engineering leadership, building high-performing teams, and driving technical excellence. I&apos;ve partnered with product teams to develop innovative solutions that accelerate revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
               </p>
+              <p className="text-lg mt-4 text-base-content dark:text-gray-200">
+                Outside of work, I&apos;m a proud father to a 3-year-old son and 1-year-old daughter. I enjoy listening to podcasts, reading non-fiction books, and taking occasional hikes to disconnect and recharge.
+              </p>
             </div>
           </div>
         </div>
