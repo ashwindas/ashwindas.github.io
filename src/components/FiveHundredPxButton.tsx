@@ -10,7 +10,7 @@ export const FiveHundredPxButton = () => {
       href={fiveHundredPxUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn btn-sm px-4 bg-[#0099e5] hover:bg-[#0078b5] text-white border-none flex items-center gap-2"
+      className="btn bg-[#0099e5] hover:bg-[#0078b5] text-white border-none flex items-center gap-2"
       aria-label="Visit my 500px photography portfolio"
     >
       <svg 

@@ -10,7 +10,7 @@ export const LinkedInButton = () => {
       href={linkedInUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn btn-sm px-4 bg-[#0077B5] hover:bg-[#0069a1] text-white border-none flex items-center gap-2"
+      className="btn bg-[#0077B5] hover:bg-[#0069a1] text-white border-none flex items-center gap-2"
       aria-label="Visit my LinkedIn profile"
     >
       <svg 

@@ -12,7 +12,7 @@ export const EmailButton = () => {
   return (
     <button
       onClick={handleEmailClick}
-      className="btn btn-sm px-4 bg-primary hover:bg-primary-focus text-white border-none flex items-center gap-2"
+      className="btn bg-primary hover:bg-primary-focus text-white border-none flex items-center gap-2"
       aria-label="Email me"
     >
       <svg 

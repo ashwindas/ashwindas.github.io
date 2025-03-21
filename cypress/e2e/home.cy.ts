@@ -65,7 +65,7 @@ describe('Home Page', () => {
       
     // Check that it has the correct styling
     cy.get('a[href="https://www.linkedin.com/in/ashwindas/"]')
-      .should('have.class', 'btn-sm')
+      .should('have.class', 'btn')
       .and('have.css', 'background-color')
       
     // Ensure the LinkedIn icon is present
