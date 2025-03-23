@@ -2,6 +2,7 @@ import { ScrollButton } from '@/components/ScrollButton'
 import { EmailButton } from '@/components/EmailButton'
 import { LinkedInButton } from '@/components/LinkedInButton'
 import { FiveHundredPxButton } from '@/components/FiveHundredPxButton'
+import { FiveHundredPxGallery } from '@/components/FiveHundredPxGallery'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -73,11 +74,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Photography</h2>
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
-            <div className="card-body text-center">
+            <div className="card-body">
               <p className="text-lg mb-6 text-base-content dark:text-gray-200">
-                Photography is my occasional creative outlet. View my portfolio on 500px:
+                Photography is my occasional creative outlet. Explore some of my work below:
               </p>
-              <div className="flex justify-center">
+              <FiveHundredPxGallery username="AshwinDas" height={600} />
+              <div className="flex justify-center mt-6">
                 <FiveHundredPxButton />
               </div>
             </div>
