@@ -46,7 +46,7 @@ npx serve out -p $PORT &
 SERVER_PID=$!
 
 echo "Waiting for server to start..."
-sleep 3
+sleep 5
 
 # Set test status variable
 TEST_STATUS=0
