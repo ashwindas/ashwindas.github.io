@@ -30,20 +30,26 @@ export default function Home() {
             <p className="py-6 text-lg text-base-content dark:text-gray-200">Engineering Leader @ Adobe | Payments & Risk</p>
             
             {/* Action buttons */}
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center items-center gap-2">
               <ScrollButton
                 targetId="about"
-                className="btn btn-primary"
+                className="btn btn-primary min-w-[140px]"
               >
                 About Me
               </ScrollButton>
               <ScrollButton
+                targetId="experience"
+                className="btn btn-primary min-w-[140px]"
+              >
+                Experience
+              </ScrollButton>
+              <ScrollButton
                 targetId="photography"
-                className="btn btn-primary"
+                className="btn btn-primary min-w-[140px]"
               >
                 Photography
               </ScrollButton>
-              <LinkedInButton />
+              <LinkedInButton className="btn-primary !bg-[#0077B5] hover:!bg-[#0069a1] min-w-[140px]" />
             </div>
           </div>
         </div>
@@ -56,7 +62,7 @@ export default function Home() {
           <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-4xl mx-auto">
             <div className="card-body">
               <p className="text-lg text-base-content dark:text-gray-200">
-                I&apos;m a Senior Engineering Manager at Adobe leading the Payments, Risk, and Intelligence team. With over 15 years of experience, I specialize in building and scaling distributed systems that process billions in transactions while preventing fraud and managing risk.
+                I&apos;m a Senior Engineering Manager at Adobe leading the Commerce - Payment & Risk platform team. With over {Math.ceil((new Date().getFullYear() - 2008) - 2)} years of experience, I specialize in building and scaling distributed systems that process billions in transactions while preventing fraud and managing risk.
               </p>
               <p className="text-lg mt-4 text-base-content dark:text-gray-200">
                 My expertise spans engineering leadership, building high-performing teams, and driving technical excellence. I&apos;ve partnered with product teams to develop innovative solutions that accelerate revenue growth by supporting new business models. My leadership philosophy centers on empowering engineers through mentorship while maintaining rigorous technical standards, resulting in high-performance teams.
@@ -64,6 +70,168 @@ export default function Home() {
               <p className="text-lg mt-4 text-base-content dark:text-gray-200">
                 Outside of work, I&apos;m a proud father to a 3-year-old son and 1-year-old daughter. I enjoy listening to podcasts, reading non-fiction books, and taking occasional hikes to disconnect and recharge.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work & Education Section */}
+      <section id="experience" className="py-12 bg-base-200 dark:bg-base-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-6 text-center text-base-content dark:text-gray-100">Work & Education</h2>
+          
+          {/* Work Experience */}
+          <div className="mb-6">
+            <h3 className="text-2xl font-semibold mb-3 text-center text-base-content dark:text-gray-100">Professional Experience</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto">
+              {/* Adobe Senior Engineering Manager */}
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/adobe-icon.png"
+                            alt="Adobe Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">Adobe</h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">Senior Engineering Manager</h5>
+                    </div>
+                    <span className="badge badge-outline">2020 - Present</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Adobe Staff Engineer */}
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/adobe-icon.png"
+                            alt="Adobe Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">Adobe</h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">Senior Computer Scientist / Staff Engineer</h5>
+                    </div>
+                    <span className="badge badge-outline">2017 - 2020</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Adobe Computer Scientist */}
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/adobe-icon.png"
+                            alt="Adobe Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">Adobe</h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">Computer Scientist</h5>
+                    </div>
+                    <span className="badge badge-outline">2013 - 2017</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Nokia Role */}
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/nokia-logo.png"
+                            alt="Nokia Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">Nokia</h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">Software Engineer</h5>
+                    </div>
+                    <span className="badge badge-outline">2008 - 2011</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Education */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-3 text-center text-base-content dark:text-gray-100">Education</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-6xl mx-auto">
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/cmu-logo.png"
+                            alt="Carnegie Mellon University Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">
+                          Carnegie Mellon University
+                        </h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">Master of Science</h5>
+                    </div>
+                    <span className="badge badge-outline">2011 - 2013</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bachelors Degree */}
+              <div className="card bg-base-300 dark:bg-base-300 shadow-md hover:shadow-lg transition-shadow">
+                <div className="card-body p-3">
+                  <div className="flex justify-between items-start flex-wrap gap-1 sm:gap-0">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-8 h-8 relative">
+                          <Image
+                            src="/images/logos/bms-logo.png"
+                            alt="B.M.S. College of Engineering Logo"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                        <h4 className="text-lg font-bold text-base-content dark:text-gray-100">
+                          B.M.S. College of Engineering
+                        </h4>
+                      </div>
+                      <h5 className="text-md font-medium text-primary">B.E. in Computer Science</h5>
+                    </div>
+                    <span className="badge badge-outline">2004 - 2008</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -78,7 +246,11 @@ export default function Home() {
               <p className="text-lg mb-6 text-base-content dark:text-gray-200">
                 Photography is my occasional creative outlet. Explore some of my work below:
               </p>
-              <FiveHundredPxGallery username="AshwinDas" height={600} />
+              <FiveHundredPxGallery 
+                username="AshwinDas" 
+                galleryUrl="https://500px.com/p/AshwinDas/galleries/ashwin-s-photography"
+                height={600} 
+              />
               <div className="flex justify-center mt-6">
                 <FiveHundredPxButton />
               </div>

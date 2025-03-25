@@ -4,17 +4,24 @@ This document describes how to integrate a 500px gallery into your website using
 
 ## FiveHundredPxGallery Component
 
-A simple iframe-based approach that embeds the 500px profile page directly.
+A simple iframe-based approach that embeds a 500px gallery directly.
 
 ```tsx
 import { FiveHundredPxGallery } from '@/components/FiveHundredPxGallery'
 
-// Basic usage
+// Basic usage with username (will use default gallery)
 <FiveHundredPxGallery username="AshwinDas" />
+
+// With specific gallery URL
+<FiveHundredPxGallery 
+  username="AshwinDas"
+  galleryUrl="https://500px.com/p/AshwinDas/galleries/ashwin-s-photography" 
+/>
 
 // With custom height and width
 <FiveHundredPxGallery 
   username="AshwinDas"
+  galleryUrl="https://500px.com/p/AshwinDas/galleries/ashwin-s-photography"
   height={800}
   width="100%" 
   showTitle={false}
@@ -34,7 +41,7 @@ const cspContent = `...; frame-src 'self' https://500px.com; ...`;
 - Simple implementation with minimal code
 - No API keys or credentials required
 - Zero API usage costs
-- Automatically stays in sync with your 500px profile
+- Automatically stays in sync with your 500px gallery
 - Managed by 500px, so design updates happen automatically
 
 ## Usage in Your Site
@@ -51,7 +58,11 @@ The component is already implemented in your site's photography section:
         <p className="text-lg mb-6 text-base-content dark:text-gray-200">
           Photography is my occasional creative outlet. Explore some of my work below:
         </p>
-        <FiveHundredPxGallery username="AshwinDas" height={600} />
+        <FiveHundredPxGallery 
+          username="AshwinDas" 
+          galleryUrl="https://500px.com/p/AshwinDas/galleries/ashwin-s-photography"
+          height={600} 
+        />
         <div className="flex justify-center mt-6">
           <FiveHundredPxButton />
         </div>

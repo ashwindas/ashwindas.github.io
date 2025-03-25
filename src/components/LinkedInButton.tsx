@@ -2,7 +2,11 @@
 
 import React from 'react'
 
-export const LinkedInButton = () => {
+interface LinkedInButtonProps {
+  className?: string;
+}
+
+export const LinkedInButton = ({ className = '' }: LinkedInButtonProps) => {
   const linkedInUrl = "https://www.linkedin.com/in/ashwindas/"
   
   return (
@@ -10,7 +14,7 @@ export const LinkedInButton = () => {
       href={linkedInUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn bg-[#0077B5] hover:bg-[#0069a1] text-white border-none flex items-center gap-2"
+      className={`btn bg-[#0077B5] hover:bg-[#0069a1] text-white border-none flex items-center gap-2 ${className}`}
       aria-label="Visit my LinkedIn profile"
     >
       <svg 

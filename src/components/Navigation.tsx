@@ -128,6 +128,15 @@ export function Navigation() {
             </li>
             <li>
               <ScrollButton
+                targetId="experience"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                Work & Education
+              </ScrollButton>
+            </li>
+            <li>
+              <ScrollButton
                 targetId="photography"
                 className="text-base-content"
                 onClick={() => handleSectionNav()}
@@ -158,6 +167,14 @@ export function Navigation() {
               className="text-base-content"
             >
               About
+            </ScrollButton>
+          </li>
+          <li>
+            <ScrollButton
+              targetId="experience"
+              className="text-base-content"
+            >
+              Work & Education
             </ScrollButton>
           </li>
           <li>

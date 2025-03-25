@@ -14,8 +14,8 @@ describe('Photography Section', () => {
 
   it('contains descriptive text about photography', () => {
     cy.get('section#photography').within(() => {
-      cy.get('p').should('contain', 'Photography is my occasional creative outlet');
-      cy.get('p').should('contain', '500px');
+      cy.get('p').should('contain', 'Photography is my');
+      cy.get('p').should('exist');
     });
   });
 

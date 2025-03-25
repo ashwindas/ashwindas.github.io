@@ -18,6 +18,7 @@ describe('Home Page', () => {
     
     // Check that other main sections exist
     cy.get('section#about').should('exist');
+    cy.get('section#experience').should('exist');
     cy.get('section#photography').should('exist');
     cy.get('section#contact').should('exist');
   });
@@ -27,9 +28,9 @@ describe('Home Page', () => {
     cy.get('a').should('exist');
     
     // Check for presence of buttons without clicking them
-    cy.contains('About Me').should('exist');
-    cy.contains('Photography').should('exist');
-    cy.get('section#contact').should('exist');
+    cy.get('button').contains('About Me').should('exist');
+    cy.get('button').contains('Experience').should('exist');
+    cy.get('button').contains('Photography').should('exist');
   });
 
   it('has a working theme toggle', () => {
@@ -43,6 +44,27 @@ describe('Home Page', () => {
     // We'll skip the actual toggle test since we can't find the button in production build
     // but we'll check that the theme-helper script is included
     cy.get('script[src="/theme-helper.js"]').should('exist');
+  });
+
+  it('displays work experience and education', () => {
+    // Scroll to experience section
+    cy.get('section#experience').scrollIntoView().should('be.visible');
+    
+    // Check section heading
+    cy.get('section#experience h2').contains('Work').should('be.visible');
+    
+    // Check professional experience subsection
+    cy.get('section#experience h3').contains('Professional Experience').should('be.visible');
+    
+    // Check for at least one job entry
+    cy.get('section#experience').contains('Adobe').should('be.visible');
+    cy.get('section#experience').contains('Engineering Manager').should('be.visible');
+    
+    // Check education subsection
+    cy.get('section#experience h3').contains('Education').should('be.visible');
+    
+    // Check for at least one education entry
+    cy.get('section#experience').contains('Master').should('be.visible');
   });
 
   it('validates email button functionality', () => {

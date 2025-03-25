@@ -3,7 +3,8 @@
 import React, { useState } from 'react'
 
 type FiveHundredPxGalleryProps = {
-  username: string
+  username?: string
+  galleryUrl?: string
   height?: number
   width?: string
   showTitle?: boolean
@@ -11,15 +12,19 @@ type FiveHundredPxGalleryProps = {
 
 export const FiveHundredPxGallery = ({
   username = 'AshwinDas',
+  galleryUrl,
   height = 600,
   width = '100%',
   showTitle = true
 }: FiveHundredPxGalleryProps) => {
   const [isLoading, setIsLoading] = useState(true)
+  
+  // Use the specific gallery URL if provided, otherwise use the profile URL
+  const defaultGalleryUrl = `https://500px.com/p/${username}/galleries/ashwin-s-photography`
   const profileUrl = `https://500px.com/p/${username}`
   
-  // The iframe URL to embed the photographer's profile page
-  const embedUrl = `https://500px.com/${username}`
+  // The iframe URL to embed the specific gallery
+  const embedUrl = galleryUrl || defaultGalleryUrl
   
   return (
     <div className="gallery-container">
