@@ -1,8 +1,8 @@
-import { ScrollButton } from '@/components/ScrollButton'
-import { EmailButton } from '@/components/EmailButton'
-import { LinkedInButton } from '@/components/LinkedInButton'
-import { FiveHundredPxButton } from '@/components/FiveHundredPxButton'
-import { FiveHundredPxGallery } from '@/components/FiveHundredPxGallery'
+import { ScrollButton } from '../components/ScrollButton'
+import { EmailButton } from '../components/EmailButton'
+import { LinkedInButton } from '../components/LinkedInButton'
+import { FiveHundredPxButton } from '../components/FiveHundredPxButton'
+import { FiveHundredPxGallery } from '../components/FiveHundredPxGallery'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -48,6 +48,12 @@ export default function Home() {
                 className="btn btn-primary min-w-[140px]"
               >
                 Photography
+              </ScrollButton>
+              <ScrollButton
+                targetId="hackathons"
+                className="btn btn-primary min-w-[140px]"
+              >
+                Hackathons
               </ScrollButton>
               <LinkedInButton className="btn-primary !bg-[#0077B5] hover:!bg-[#0069a1] min-w-[140px]" />
             </div>
@@ -233,6 +239,78 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hackathons Section */}
+      <section id="hackathons" className="py-24 bg-base-200 dark:bg-base-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Hackathons</h2>
+          
+          {/* Judge Section */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Judge</h3>
+            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+              <a 
+                href="https://code-crunch-tropical-hack25.devpost.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <figure className="relative w-full h-[120px]">
+                  <Image
+                    src="/images/code-crunch-305-hackathon-banner.png"
+                    alt="CODE CRUNCH 305 Hackathon Banner"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </figure>
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">CODE CRUNCH 305 Hackathon</h3>
+                    <div className="badge badge-primary">Judge</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">Spring 2025 Edition</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Winner Section */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Winner</h3>
+            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+              <a 
+                href="https://web.archive.org/web/20161121142311/http://www.cmu.edu/silicon-valley/news-events/news/2012/paypal-hackathon.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <figure className="relative w-full h-[180px] bg-white">
+                  <Image
+                    src="/images/paypal-hackathon-banner.png"
+                    alt="PayPal Hack-a-thon Banner"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </figure>
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">PayPal Hack-a-thon</h3>
+                    <div className="badge badge-secondary">Winner</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">September 2012</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Placeholder for future sections */}
+          <div className="space-y-12">
+            {/* Additional sections will be added here */}
           </div>
         </div>
       </section>
