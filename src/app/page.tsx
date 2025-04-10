@@ -50,6 +50,12 @@ export default function Home() {
                 Photography
               </ScrollButton>
               <ScrollButton
+                targetId="conferences"
+                className="btn btn-primary min-w-[140px]"
+              >
+                Conferences
+              </ScrollButton>
+              <ScrollButton
                 targetId="hackathons"
                 className="btn btn-primary min-w-[140px]"
               >
@@ -237,6 +243,77 @@ export default function Home() {
                     <span className="badge badge-outline">2004 - 2008</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Conferences Section */}
+      <section id="conferences" className="py-24 bg-base-100 dark:bg-base-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Conferences</h2>
+          <div className="space-y-12">
+            {/* Speaker Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Speaker</h3>
+              <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+                <a 
+                  href="https://futureofconversationalai.com/FOCCAS2025.2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+                >
+                  <div className="card-body">
+                    <div className="flex items-center justify-between">
+                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Future of Chatbots and Conversational AI Summit 2025</h3>
+                      <div className="badge badge-primary">Speaker</div>
+                    </div>
+                    <p className="text-sm text-base-content dark:text-gray-200">
+                      <span className="inline-block mr-2">📍 San Francisco</span>
+                    </p>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://www.clarionevents-leaderssummit.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+                >
+                  <div className="card-body">
+                    <div className="flex items-center justify-between">
+                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Payment & Fraud Leaders Summit 2025</h3>
+                      <div className="badge badge-primary">Speaker</div>
+                    </div>
+                    <p className="text-sm text-base-content dark:text-gray-200">
+                      <span className="inline-block mr-2">📍 Miami</span>
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* Session Chair / Judge Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Session Chair / Judge</h3>
+              <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+                <a 
+                  href="https://scrs.in/public/conference/bida2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+                >
+                  <div className="card-body">
+                    <div className="flex items-center justify-between">
+                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Business Intelligence and Data Analytics (BIDA 2025)</h3>
+                      <div className="badge badge-primary">Session Chair</div>
+                    </div>
+                    <p className="text-sm text-base-content dark:text-gray-200">
+                      <span className="inline-block mr-2">📍 Bangalore, India</span>
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

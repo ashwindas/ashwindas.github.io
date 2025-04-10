@@ -52,7 +52,7 @@ describe('Hackathons Section', () => {
               .should('contain', 'September 2012')
             cy.get('img')
               .should('be.visible')
-              .should('have.attr', 'alt', 'PayPal Hackathon Banner')
+              .should('have.attr', 'alt', 'PayPal Hack-a-thon Banner')
           })
       })
   })
