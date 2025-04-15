@@ -330,19 +330,73 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Judge</h3>
             <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
               <a 
+                href="https://ai-valley-hackathon.devpost.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <figure className="relative w-full h-[120px] bg-white flex items-center justify-center">
+                  <div className="relative w-[500px] h-[100px]">
+                    <Image
+                      src="/images/cmu-2025-hackathon-banner.png"
+                      alt="AI Valley Hackathon Banner"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </figure>
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">AI Valley Hackathon - By Carnegie Mellon University Students</h3>
+                    <div className="badge badge-primary">Judge</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">April 19 - 20, 2025</p>
+                </div>
+              </a>
+
+              <a 
+                href="https://amplicode.devpost.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <figure className="relative w-full h-[120px] bg-white flex items-center justify-center">
+                  <div className="relative w-[500px] h-[100px]">
+                    <Image
+                      src="/images/amplicode-2025-hackathon-banner.png"
+                      alt="AmpliCode Hackathon 2025 Banner"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                </figure>
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">AmpliCode Hackathon 2025</h3>
+                    <div className="badge badge-primary">Judge</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">Apr 30 – May 30, 2025</p>
+                </div>
+              </a>
+
+              <a 
                 href="https://code-crunch-tropical-hack25.devpost.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
               >
-                <figure className="relative w-full h-[120px]">
-                  <Image
-                    src="/images/code-crunch-305-hackathon-banner.png"
-                    alt="CODE CRUNCH 305 Hackathon Banner"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+                <figure className="relative w-full h-[120px] bg-white flex items-center justify-center">
+                  <div className="relative w-[500px] h-[100px]">
+                    <Image
+                      src="/images/code-crunch-305-hackathon-banner.png"
+                      alt="CODE CRUNCH 305 Hackathon Banner"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </figure>
                 <div className="card-body">
                   <div className="flex items-center justify-between">
@@ -365,14 +419,16 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
               >
-                <figure className="relative w-full h-[180px] bg-white">
-                  <Image
-                    src="/images/paypal-hackathon-banner.png"
-                    alt="PayPal Hack-a-thon Banner"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                <figure className="relative w-full h-[120px] bg-white flex items-center justify-center">
+                  <div className="relative w-[500px] h-[100px]">
+                    <Image
+                      src="/images/paypal-hackathon-banner.png"
+                      alt="PayPal Hack-a-thon Banner"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </figure>
                 <div className="card-body">
                   <div className="flex items-center justify-between">

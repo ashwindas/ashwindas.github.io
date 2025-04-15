@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import Home from '../src/app/page'
 
 // Mock the required components
@@ -44,15 +44,36 @@ describe('Hackathons Section', () => {
     })
 
     it('renders CODE CRUNCH hackathon card with correct details', () => {
-      const codeCrunchLink = screen.getByRole('link', { name: /CODE CRUNCH 305 Hackathon/i })
-      expect(codeCrunchLink).toHaveAttribute('href', 'https://code-crunch-tropical-hack25.devpost.com/')
-      expect(codeCrunchLink).toHaveAttribute('target', '_blank')
-      expect(codeCrunchLink).toHaveAttribute('rel', 'noopener noreferrer')
+      const codeCrunchCard = screen.getByRole('link', { name: /CODE CRUNCH 305 Hackathon/i })
+      expect(codeCrunchCard).toHaveAttribute('href', 'https://code-crunch-tropical-hack25.devpost.com/')
+      expect(codeCrunchCard).toHaveAttribute('target', '_blank')
+      expect(codeCrunchCard).toHaveAttribute('rel', 'noopener noreferrer')
       
-      expect(screen.getByRole('heading', { name: 'CODE CRUNCH 305 Hackathon' })).toBeInTheDocument()
-      expect(screen.getByText('Spring 2025 Edition')).toBeInTheDocument()
-      const judgeBadge = screen.getByText('Judge', { selector: '.badge' })
-      expect(judgeBadge).toBeInTheDocument()
+      within(codeCrunchCard).getByRole('heading', { name: 'CODE CRUNCH 305 Hackathon' })
+      within(codeCrunchCard).getByText('Spring 2025 Edition')
+      within(codeCrunchCard).getByText('Judge', { selector: '.badge' })
+    })
+
+    it('renders AmpliCode hackathon card with correct details', () => {
+      const ampliCodeCard = screen.getByRole('link', { name: /AmpliCode Hackathon 2025/i })
+      expect(ampliCodeCard).toHaveAttribute('href', 'https://amplicode.devpost.com/')
+      expect(ampliCodeCard).toHaveAttribute('target', '_blank')
+      expect(ampliCodeCard).toHaveAttribute('rel', 'noopener noreferrer')
+      
+      within(ampliCodeCard).getByRole('heading', { name: 'AmpliCode Hackathon 2025' })
+      within(ampliCodeCard).getByText('Apr 30 – May 30, 2025')
+      within(ampliCodeCard).getByText('Judge', { selector: '.badge' })
+    })
+
+    it('renders AI Valley hackathon card with correct details', () => {
+      const aiValleyCard = screen.getByRole('link', { name: /AI Valley Hackathon/i })
+      expect(aiValleyCard).toHaveAttribute('href', 'https://ai-valley-hackathon.devpost.com/')
+      expect(aiValleyCard).toHaveAttribute('target', '_blank')
+      expect(aiValleyCard).toHaveAttribute('rel', 'noopener noreferrer')
+      
+      within(aiValleyCard).getByRole('heading', { name: 'AI Valley Hackathon - By Carnegie Mellon University Students' })
+      within(aiValleyCard).getByText('April 19 - 20, 2025')
+      within(aiValleyCard).getByText('Judge', { selector: '.badge' })
     })
 
     it('displays CODE CRUNCH banner image', () => {
