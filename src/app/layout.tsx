@@ -10,23 +10,26 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ashwin Das Gururaja | Engineering Leader at Adobe | Payments & Risk",
-  description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions at Adobe.",
-  keywords: ["engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions"],
+  description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. 15+ years experience in distributed systems, engineering leadership, and AI solutions. Carnegie Mellon alumnus leading innovation in payment processing and fraud prevention.",
+  keywords: ["Ashwin Das Chikkerahally Gururaja", "engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions", "Carnegie Mellon", "payment processing", "fraud prevention", "technical leadership"],
   metadataBase: new URL('https://ashwindas.github.io'),
-  authors: [{ name: "Ashwin Das Gururaja" }],
-  creator: "Ashwin Das Gururaja",
-  publisher: "Ashwin Das Gururaja",
+  authors: [{ name: "Ashwin Das Chikkerahally Gururaja" }],
+  creator: "Ashwin Das Chikkerahally Gururaja",
+  publisher: "Ashwin Das Chikkerahally Gururaja",
+  alternates: {
+    canonical: 'https://ashwindas.github.io'
+  },
   openGraph: {
     title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
-    description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions.",
+    description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. 15+ years experience in distributed systems, engineering leadership, and AI solutions.",
     url: 'https://ashwindas.github.io',
-    siteName: 'Ashwin Das Gururaja Portfolio',
+    siteName: 'Ashwin Das Chikkerahally Gururaja Portfolio',
     images: [
       {
         url: 'https://ashwindas.github.io/images/headshot.jpg',
         width: 200,
         height: 200,
-        alt: 'Ashwin Das Gururaja',
+        alt: 'Ashwin Das Chikkerahally Gururaja',
       }
     ],
     locale: 'en_US',
@@ -35,12 +38,23 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
-    description: "Engineering leader with 15+ years of experience in building and scaling distributed systems, payments, risk management, and AI solutions.",
+    description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. Expert in distributed systems and engineering leadership.",
+    creator: "@ashwindas",
     images: ['https://ashwindas.github.io/images/headshot.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // You'll need to add your actual verification code
   },
   icons: {
     icon: '/favicon.ico',
@@ -126,16 +140,55 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Ashwin Das Gururaja",
+              "name": "Ashwin Das Chikkerahally Gururaja",
+              "alternateName": "Ashwin Das Gururaja",
               "jobTitle": "Senior Engineering Manager",
               "worksFor": {
                 "@type": "Organization",
-                "name": "Adobe"
+                "name": "Adobe",
+                "sameAs": "https://www.adobe.com"
               },
+              "alumniOf": [
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Carnegie Mellon University",
+                  "sameAs": "https://www.cmu.edu"
+                },
+                {
+                  "@type": "CollegeOrUniversity",
+                  "name": "B.M.S. College of Engineering",
+                  "sameAs": "https://www.bmsce.ac.in"
+                }
+              ],
               "description": "Engineering Leader with over 15 years of experience driving technical excellence in distributed systems, payments and risk management. Outside of work, a father of two who enjoys podcasts, non-fiction books, and hiking.",
               "url": "https://ashwindas.github.io",
-              "knowsAbout": ["Engineering Management", "Distributed Systems", "Payments", "Risk Management", "AI Solutions"],
-              "hobbies": ["Podcasts", "Reading Non-Fiction", "Hiking", "Photography"]
+              "sameAs": [
+                "https://www.linkedin.com/in/ashwindas",
+                "https://500px.com/p/AshwinDas"
+              ],
+              "knowsAbout": [
+                "Engineering Management",
+                "Distributed Systems",
+                "Payment Processing",
+                "Risk Management",
+                "Fraud Prevention",
+                "AI Solutions",
+                "Technical Leadership",
+                "Team Building"
+              ],
+              "hobbies": ["Podcasts", "Reading Non-Fiction", "Hiking", "Photography"],
+              "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Engineering Manager",
+                "skills": [
+                  "Distributed Systems",
+                  "Payment Processing",
+                  "Risk Management",
+                  "Team Leadership",
+                  "Technical Architecture",
+                  "AI/ML Integration"
+                ]
+              }
             }
             `
           }}

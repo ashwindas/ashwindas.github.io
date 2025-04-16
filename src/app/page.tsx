@@ -9,6 +9,10 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <>
+      {/* Legal Name: Ashwin Das Chikkerahally Gururaja */}
+      <div aria-hidden="true" className="hidden">
+        <h2>Ashwin Das Chikkerahally Gururaja</h2>
+      </div>
       {/* Hero Section with DaisyUI styling */}
       <section id="home" className="hero min-h-screen bg-base-200 dark:bg-base-100 pt-24">
         <div className="hero-content text-center">
