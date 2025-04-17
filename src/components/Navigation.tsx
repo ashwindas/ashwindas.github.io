@@ -15,6 +15,7 @@ export function Navigation() {
     setMounted(true)
     
     // Log initial theme state when component mounts
+    // /* // Removing console logs for production */
     const initialTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     const dataTheme = document.documentElement.getAttribute('data-theme');
     const storedTheme = localStorage.getItem('theme-preference');
@@ -25,6 +26,7 @@ export function Navigation() {
       resolvedTheme: resolvedTheme,
       nextThemes: theme
     });
+    // */
   }, [resolvedTheme, theme])
 
   // Close mobile menu when clicking outside
@@ -41,11 +43,13 @@ export function Navigation() {
   }, [mobileMenuOpen])
 
   // Log theme changes for debugging
+  // /* // Removing console logs for production */
   useEffect(() => {
     if (mounted && resolvedTheme) {
       console.log('Theme changed to:', resolvedTheme, 'Raw theme value:', theme)
     }
   }, [resolvedTheme, theme, mounted])
+  // */
 
   // Fix for handling section navigation
   const handleSectionNav = () => {
@@ -55,9 +59,17 @@ export function Navigation() {
 
   // Toggle theme function with improved implementation
   const toggleTheme = () => {
+    // Let next-themes handle the update
+    const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    
+    // Force a page reload to apply the theme globally
+    window.location.reload();
+
+    /* // Removing all previous direct DOM manipulation logic
     try {
       const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
-      console.log('Changing theme from', resolvedTheme, 'to', newTheme)
+      console.log('Changing theme from', resolvedTheme, 'to', newTheme) // Restoring log
       
       // Set theme with the next-themes provider
       setTheme(newTheme)
@@ -88,6 +100,7 @@ export function Navigation() {
     } catch (error) {
       console.error('Error toggling theme:', error)
     }
+    */
   }
 
   // Show a loading placeholder instead of null during hydration

@@ -94,6 +94,8 @@ export function Providers({ children }: { children: ReactNode }) {
     }
   }, [mounted]);
 
+  /* // Commenting out custom theme handling logic - rely on ThemeProvider */
+  // // Reverting - Uncommenting custom theme logic
   // Safe theme handling
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -132,6 +134,7 @@ export function Providers({ children }: { children: ReactNode }) {
       console.error('Error checking theme:', error);
     }
   }, [mounted]); // Only run after mounted
+  // */ // Reverting - End uncomment
 
   // Only render children when mounted to avoid hydration issues
   if (!mounted) {

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       {/* Legal Name: Ashwin Das Chikkerahally Gururaja */}
-      <div aria-hidden="true" className="hidden">
+      <div className="sr-only">
         <h2>Ashwin Das Chikkerahally Gururaja</h2>
       </div>
       {/* Hero Section with DaisyUI styling */}
@@ -25,7 +25,6 @@ export default function Home() {
                   alt="Ashwin Das Gururaja"
                   width={128}
                   height={128}
-                  priority
                 />
               </div>
             </div>
@@ -363,7 +362,6 @@ export default function Home() {
                       alt="AI Valley Hackathon Banner"
                       fill
                       className="object-contain"
-                      priority
                     />
                   </div>
                 </figure>
@@ -389,7 +387,6 @@ export default function Home() {
                       alt="AmpliCode Hackathon 2025 Banner"
                       fill
                       className="object-contain"
-                      priority
                     />
                   </div>
                 </figure>
@@ -415,7 +412,6 @@ export default function Home() {
                       alt="CODE CRUNCH 305 Hackathon Banner"
                       fill
                       className="object-contain"
-                      priority
                     />
                   </div>
                 </figure>
@@ -447,7 +443,6 @@ export default function Home() {
                       alt="PayPal Hack-a-thon Banner"
                       fill
                       className="object-contain"
-                      priority
                     />
                   </div>
                 </figure>

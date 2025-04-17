@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // You'll need to add your actual verification code
+    google: '0fnLCimheOALrz3hiNPRJ_P_7ogeHhV7P5Oz0iv-qsc', // You'll need to add your actual verification code
   },
   icons: {
     icon: '/favicon.ico',
@@ -72,9 +72,11 @@ export default function RootLayout({
   const isDevelopment = process.env.NODE_ENV === 'development';
   
   // Create appropriate CSP based on environment
-  const cspContent = isDevelopment
-    ? "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss:; frame-src 'self' https://500px.com; upgrade-insecure-requests;"
-    : "default-src https: 'self'; script-src https: 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self' https://www.google-analytics.com; frame-src https: 'self' https://500px.com; upgrade-insecure-requests;";
+  const cspContent = isDevelopment ?
+    // Development: Allow inline scripts and eval for Next.js dev server, remove specific hashes
+    `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss: https://www.google-analytics.com; frame-src 'self' https://500px.com; upgrade-insecure-requests;` :
+    // Production: Use hashes for known inline scripts, disallow general inline/eval
+    `default-src https: 'self'; script-src https: 'self' 'sha256-SgR99j0S0BYdcjQINWJf8tRDBqRl52d3T5X34q/kxy4=' 'sha256-c4Fq3vr0oM4nxy/+s6m3rAqr784+Xj71WIm/g8Lqbec=' https://www.googletagmanager.com; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self' https://www.google-analytics.com; frame-src https: 'self' https://500px.com; upgrade-insecure-requests;`;
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -98,7 +100,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
         
-        {/* Preload dark mode detection */}
+        {/* Preload dark mode detection - Restored */}
         <Script id="theme-preload" strategy="beforeInteractive">{`
           (function() {
             try {
