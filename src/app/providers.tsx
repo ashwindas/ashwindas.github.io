@@ -24,6 +24,7 @@ export function Providers({ children }: { children: ReactNode }) {
     return () => clearTimeout(timer)
   }, [])
 
+  /* // Commenting out WebSocket error suppression - may cause issues in static test env
   // Fix for WebSocket connections closing prematurely
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -44,7 +45,9 @@ export function Providers({ children }: { children: ReactNode }) {
       console.error = originalConsoleError;
     };
   }, []);
+  */
 
+  /* // Commenting out Smooth Scroll Polyfill for testing
   // Add smooth scrolling polyfill - make it safer for SSR
   useEffect(() => {
     // Only run on client side
@@ -93,6 +96,7 @@ export function Providers({ children }: { children: ReactNode }) {
       }
     }
   }, [mounted]);
+  */
 
   /* // Commenting out custom theme handling logic - rely on ThemeProvider */
   // // Reverting - Uncommenting custom theme logic

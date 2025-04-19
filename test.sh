@@ -51,15 +51,45 @@ sleep 5
 # Set test status variable
 TEST_STATUS=0
 
-if [ "$HEADLESS" == "true" ]; then
-  echo "Running tests in headless mode..."
-  npx cypress run --config video=false
-  TEST_STATUS=$?
-else
-  echo "Running tests in interactive mode..."
-  npx cypress open
-  TEST_STATUS=$?
-fi
+# Run tests with timeout function
+run_tests_with_timeout() {
+  # Set timeout (180 seconds = 3 minutes)
+  TIMEOUT=180
+  
+  echo "Tests will automatically stop after ${TIMEOUT} seconds if they don't complete"
+  
+  # Run tests in background process
+  if [ "$HEADLESS" == "true" ]; then
+    echo "Running tests in headless mode..."
+    npx cypress run --config video=false &
+  else
+    echo "Running tests in interactive mode..."
+    npx cypress open &
+  fi
+  
+  TEST_PID=$!
+  
+  # Monitor the test process
+  SECONDS=0
+  while kill -0 $TEST_PID 2>/dev/null; do
+    if [ $SECONDS -ge $TIMEOUT ]; then
+      echo -e "${RED}Tests timed out after ${TIMEOUT} seconds! Stopping tests...${NC}"
+      kill -9 $TEST_PID 2>/dev/null
+      TEST_STATUS=1
+      break
+    fi
+    sleep 1
+  done
+  
+  # If process completed naturally, get its exit status
+  if [ $SECONDS -lt $TIMEOUT ]; then
+    wait $TEST_PID
+    TEST_STATUS=$?
+  fi
+}
+
+# Run tests with timeout
+run_tests_with_timeout
 
 # Cleanup: Kill the server
 echo "Stopping test server..."
@@ -78,6 +108,16 @@ if [ "$IS_CI" == "true" ]; then
     exit 1
   else 
     echo -e "${GREEN}All tests passed in CI environment!${NC}"
+  fi
+else
+  if [ $TEST_STATUS -ne 0 ]; then
+    if [ $SECONDS -ge $TIMEOUT ]; then
+      echo -e "${RED}Tests were terminated due to timeout after ${TIMEOUT} seconds.${NC}"
+    else
+      echo -e "${RED}Tests failed. See errors above.${NC}"
+    fi
+  else
+    echo -e "${GREEN}All tests completed successfully!${NC}"
   fi
 fi
 
