@@ -1,0 +1,23 @@
+# Comprehensive robots.txt for ashwindas.github.io
+# Last updated: 2024-03-19
+
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Disallow backend utility paths (if they exist) 
+User-agent: *
+Disallow: /.github/
+Disallow: /api/_internal/
+Disallow: /cgi-bin/
+Disallow: /_next/static/chunks/
+
+# Set crawl delay for heavy bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://ashwindas.github.io/sitemap.xml 
