@@ -75,8 +75,8 @@ export default function RootLayout({
   const cspContent = isDevelopment ?
     // Development: Allow inline scripts and eval for Next.js dev server, remove specific hashes
     `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss: https://www.google-analytics.com; frame-src 'self' https://500px.com; upgrade-insecure-requests;` :
-    // Production: Use hashes for known inline scripts, disallow general inline/eval
-    `default-src https: 'self'; script-src https: 'self' 'sha256-SgR99j0S0BYdcjQINWJf8tRDBqRl52d3T5X34q/kxy4=' 'sha256-c4Fq3vr0oM4nxy/+s6m3rAqr784+Xj71WIm/g8Lqbec=' https://www.googletagmanager.com; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self' https://www.google-analytics.com; frame-src https: 'self' https://500px.com; upgrade-insecure-requests;`;
+    // Production: Adding 'unsafe-inline' to fix CSP issues with dynamically generated scripts
+    `default-src https: 'self'; script-src https: 'self' 'unsafe-inline' 'sha256-SgR99j0S0BYdcjQINWJf8tRDBqRl52d3T5X34q/kxy4=' 'sha256-c4Fq3vr0oM4nxy/+s6m3rAqr784+Xj71WIm/g8Lqbec=' https://www.googletagmanager.com; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data:; font-src https: 'self' data:; connect-src https: 'self' https://www.google-analytics.com; frame-src https: 'self' https://500px.com; upgrade-insecure-requests;`;
 
   return (
     <html lang="en" suppressHydrationWarning>
