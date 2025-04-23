@@ -2,7 +2,11 @@
 
 import React from 'react'
 
-export const FiveHundredPxButton = () => {
+interface FiveHundredPxButtonProps {
+  className?: string;
+}
+
+export const FiveHundredPxButton = ({ className = '' }: FiveHundredPxButtonProps) => {
   const fiveHundredPxUrl = "https://500px.com/p/AshwinDas"
   
   return (
@@ -10,7 +14,7 @@ export const FiveHundredPxButton = () => {
       href={fiveHundredPxUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn bg-[#0099e5] hover:bg-[#0078b5] text-white border-none flex items-center gap-2"
+      className={`btn bg-[#0099e5] hover:bg-[#0078b5] text-white border-none flex items-center gap-2 ${className}`}
       aria-label="Visit my 500px photography portfolio"
     >
       <svg 

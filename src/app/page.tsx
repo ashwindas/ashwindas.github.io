@@ -252,6 +252,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section id="contact" className="py-12 bg-base-100 dark:bg-base-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Contact</h2>
+          <div className="flex flex-wrap justify-center items-center gap-4 max-w-2xl mx-auto">
+            <EmailButton className="btn-primary min-w-[140px]" />
+            <LinkedInButton className="btn-primary !bg-[#0077B5] hover:!bg-[#0069a1] min-w-[140px]" />
+            <FiveHundredPxButton className="btn-primary min-w-[140px]" />
+          </div>
+        </div>
+      </section>
+
       {/* Conferences Section */}
       <section id="conferences" className="py-24 bg-base-100 dark:bg-base-200">
         <div className="container mx-auto px-4">
@@ -308,6 +320,23 @@ export default function Home() {
                     </div>
                     <p className="text-sm text-base-content dark:text-gray-200">
                       <span className="inline-block mr-2">📍 Delhi, India</span>
+                    </p>
+                  </div>
+                </a>
+
+                <a 
+                  href="https://scrs.in/conference/CVR2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+                >
+                  <div className="card-body">
+                    <div className="flex items-center justify-between">
+                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Computer Vision and Robotics (CVR 2025)</h3>
+                      <div className="badge badge-primary">Speaker</div>
+                    </div>
+                    <p className="text-sm text-base-content dark:text-gray-200">
+                      <span className="inline-block mr-2">📍 NIT Goa, India</span>
                     </p>
                   </div>
                 </a>
@@ -481,27 +510,6 @@ export default function Home() {
               <div className="flex justify-center mt-6">
                 <FiveHundredPxButton />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section with DaisyUI elements */}
-      <section id="contact" className="py-24 bg-base-200 dark:bg-base-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Get In Touch</h2>
-          <div className="card bg-base-200 dark:bg-base-100 shadow-xl max-w-md mx-auto">
-            <div className="card-body">
-              <p className="text-lg mb-6 text-center text-base-content dark:text-gray-200">
-                Feel free to reach out through LinkedIn or email:
-              </p>
-              <div className="flex justify-center space-x-4">
-                <LinkedInButton />
-                <EmailButton />
-              </div>
-              <p className="mt-6 text-sm text-center opacity-75 text-base-content dark:text-gray-300">
-                I&apos;ll respond to professional inquiries as soon as possible.
-              </p>
             </div>
           </div>
         </div>

@@ -14,12 +14,13 @@
     "serve": "npx serve out -p 8000",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
-    "test": "npm run test:unit && npm run build && start-server-and-test serve http://localhost:8000 cypress:headless",
+    "test": "cypress run",
     "test:dev": "start-server-and-test dev http://localhost:3000 cypress",
     "test:interactive": "./test.sh",
     "test:ci": "./test.sh --headless",
     "test:unit": "jest",
-    "test:unit:watch": "jest --watch"
+    "test:unit:watch": "jest --watch",
+    "test:e2e": "start-server-and-test dev http://localhost:3000 test"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

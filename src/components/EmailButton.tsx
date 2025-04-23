@@ -2,7 +2,11 @@
 
 import React from 'react'
 
-export const EmailButton = () => {
+interface EmailButtonProps {
+  className?: string;
+}
+
+export const EmailButton = ({ className = '' }: EmailButtonProps) => {
   const handleEmailClick = () => {
     // Split email into parts to avoid scraping
     const parts = ['ashwindas', 'cg', 'gmail.com'];
@@ -12,7 +16,7 @@ export const EmailButton = () => {
   return (
     <button
       onClick={handleEmailClick}
-      className="btn bg-primary hover:bg-primary-focus text-white border-none flex items-center gap-2"
+      className={`btn bg-primary hover:bg-primary-focus text-white border-none flex items-center gap-2 ${className}`}
       aria-label="Email me"
     >
       <svg 

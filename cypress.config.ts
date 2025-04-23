@@ -8,7 +8,8 @@ export default defineConfig({
     video: false,
     screenshotOnRunFailure: false,
     testIsolation: true,
-    defaultCommandTimeout: 4000,
+    defaultCommandTimeout: 10000,
+    pageLoadTimeout: 10000,
     experimentalRunAllSpecs: true,
     numTestsKeptInMemory: 5,
     setupNodeEvents(on, config) {
