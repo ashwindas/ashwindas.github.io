@@ -71,12 +71,11 @@
     <script>
         // Email obfuscation
         document.addEventListener('DOMContentLoaded', function() {
-            const user = "ashwindascg";
-            const domain = "gmail.com";
+            const parts = ['ashwindas', 'cg', 'gmail.com'];
             const emailElement = document.getElementById('email-container');
             const link = document.createElement('a');
-            link.href = `mailto:${user}@${domain}`;
-            link.textContent = `${user}@${domain}`;
+            link.href = `mailto:${parts[0]}${parts[1]}@${parts[2]}`;
+            link.textContent = `${parts[0]}${parts[1]}@${parts[2]}`;
             emailElement.appendChild(link);
         });
     </script>

@@ -4,9 +4,9 @@ import React from 'react'
 
 export const EmailButton = () => {
   const handleEmailClick = () => {
-    const user = "ashwindascg";
-    const domain = "gmail.com";
-    window.location.href = `mailto:${user}@${domain}`;
+    // Split email into parts to avoid scraping
+    const parts = ['ashwindas', 'cg', 'gmail.com'];
+    window.location.href = `mailto:${parts[0]}${parts[1]}@${parts[2]}`;
   }
 
   return (
