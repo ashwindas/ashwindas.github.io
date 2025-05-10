@@ -14,7 +14,7 @@ const colors = {
 console.log(colors.blue('Generating sitemap.xml...'));
 
 // Base URL of your website
-const BASE_URL = 'https://ashwindas.github.io';
+const BASE_URL = 'https://ashwindas.com';
 
 // Main pages to include in sitemap
 const pages = [
