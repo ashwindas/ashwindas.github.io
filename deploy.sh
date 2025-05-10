@@ -60,7 +60,7 @@ echo -e "${YELLOW}Restoring CNAME file...${NC}"
 if [ -f "out/CNAME.bak" ]; then
   mv out/CNAME.bak out/CNAME
 elif [ ! -f "out/CNAME" ]; then
-  echo "ashwindas.github.io" > out/CNAME
+  echo "ashwindas.com" > out/CNAME
 fi
 
 # List files for verification
