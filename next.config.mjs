@@ -12,7 +12,6 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
-  // No basePath or assetPrefix needed when using custom domain
   // Add trailing slash for consistent static export
   trailingSlash: true,
   // Increase timeout for builds
