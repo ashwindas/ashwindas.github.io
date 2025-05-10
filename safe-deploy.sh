@@ -122,4 +122,4 @@ fi
 echo -e "\n${GREEN}=======================================${NC}"
 echo -e "${GREEN}   DEPLOYMENT COMPLETED SUCCESSFULLY   ${NC}"
 echo -e "${GREEN}=======================================${NC}"
-echo -e "${YELLOW}Your site should be live at: https://ashwindas.github.io${NC}" 
+echo -e "${YELLOW}Your site should be live at: https://ashwindas.com${NC}" 

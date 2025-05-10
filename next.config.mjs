@@ -12,9 +12,7 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
-  // Set basePath and assetPrefix for GitHub Pages
-  basePath: '',
-  assetPrefix: '',
+  // No basePath or assetPrefix needed when using custom domain
   // Add trailing slash for consistent static export
   trailingSlash: true,
   // Increase timeout for builds
