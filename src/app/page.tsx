@@ -325,7 +325,7 @@ export default function Home() {
                 </a>
 
                 <a 
-                  href="https://www.conf42.com/Observability_2025_Ashwin_Das_Gururaja_dashboard_payment_commerce"
+                  href="https://www.conf42.com/Observability_2025_Ashwin_Das_Gururaja_Devang_Gaur_dashboard_payment_commerce"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
