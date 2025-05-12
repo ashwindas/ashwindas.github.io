@@ -12,6 +12,9 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
+  // Set basePath and assetPrefix properly for GitHub Pages
+  basePath: '',
+  assetPrefix: '/',
   // Add trailing slash for consistent static export
   trailingSlash: true,
   // Increase timeout for builds
