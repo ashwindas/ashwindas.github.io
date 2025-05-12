@@ -9,8 +9,8 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ashwin Das Gururaja | Engineering Leader at Adobe | Payments & Risk",
-  description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. 15+ years experience in distributed systems, engineering leadership, and AI solutions. Carnegie Mellon alumnus leading innovation in payment processing and fraud prevention.",
+  title: "Ashwin Das Gururaja | Engineering Leader @ Adobe",
+  description: "Ashwin Das Chikkerahally Gururaja is a Senior Engineering Manager at Adobe leading the Commerce - Payment & Risk platform team. Engineering Leader specializing in payments, risk and fraud systems.",
   keywords: ["Ashwin Das Chikkerahally Gururaja", "engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions", "Carnegie Mellon", "payment processing", "fraud prevention", "technical leadership"],
   metadataBase: new URL('https://ashwindas.github.io'),
   authors: [{ name: "Ashwin Das Chikkerahally Gururaja" }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://ashwindas.github.io'
   },
   openGraph: {
-    title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
+    title: "Ashwin Das Chikkerahally Gururaja | Engineering Leader at Adobe",
     description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. 15+ years experience in distributed systems, engineering leadership, and AI solutions.",
     url: 'https://ashwindas.github.io',
     siteName: 'Ashwin Das Chikkerahally Gururaja Portfolio',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: "Ashwin Das Gururaja | Engineering Leader at Adobe",
+    title: "Ashwin Das Chikkerahally Gururaja | Engineering Leader at Adobe",
     description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. Expert in distributed systems and engineering leadership.",
     creator: "@ashwindas",
     images: ['https://ashwindas.github.io/images/headshot.jpg'],
@@ -84,7 +84,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        <meta name="description" content="Ashwin Das is a software engineer and tech leader with expertise in distributed systems, developer productivity, and engineering leadership." />
+        <meta name="description" content="Ashwin Das Chikkerahally Gururaja is a Senior Engineering Manager at Adobe specializing in payments, risk, and distributed systems. Engineering leader with expertise in fraud prevention and developer productivity." />
         
         {/* Add color-scheme meta tag to ensure proper theme detection */}
         <meta name="color-scheme" content="dark light" />
