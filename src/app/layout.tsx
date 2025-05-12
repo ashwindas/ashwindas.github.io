@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ashwin Das Gururaja | Engineering Leader @ Adobe",
-  description: "Ashwin Das Chikkerahally Gururaja is a Senior Engineering Manager at Adobe leading the Commerce - Payment & Risk platform team. Engineering Leader specializing in payments, risk and fraud systems.",
-  keywords: ["Ashwin Das Chikkerahally Gururaja", "engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions", "Carnegie Mellon", "payment processing", "fraud prevention", "technical leadership"],
+  description: "Ashwin Das Chikkerahally Gururaja (also known as Ashwin Das, Ashwin Gururaja, or Ashwin Das Gururaja) is a Senior Engineering Manager at Adobe leading the Commerce - Payment & Risk platform team.",
+  keywords: ["Ashwin Das Chikkerahally Gururaja", "Ashwin Das Gururaja", "Ashwin Das", "Ashwin Gururaja", "engineering manager", "engineering leadership", "Adobe", "payments", "risk management", "distributed systems", "AI solutions", "Carnegie Mellon", "payment processing", "fraud prevention", "technical leadership"],
   metadataBase: new URL('https://ashwindas.github.io'),
   authors: [{ name: "Ashwin Das Chikkerahally Gururaja" }],
   creator: "Ashwin Das Chikkerahally Gururaja",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ashwin Das Chikkerahally Gururaja | Engineering Leader at Adobe",
-    description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. 15+ years experience in distributed systems, engineering leadership, and AI solutions.",
+    description: "Senior Engineering Manager at Adobe (Ashwin Das, Ashwin Gururaja, Ashwin Das Gururaja) specializing in Payments & Risk with expertise in distributed systems and engineering leadership.",
     url: 'https://ashwindas.github.io',
     siteName: 'Ashwin Das Chikkerahally Gururaja Portfolio',
     images: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: "Ashwin Das Chikkerahally Gururaja | Engineering Leader at Adobe",
-    description: "Senior Engineering Manager at Adobe specializing in Payments & Risk. Expert in distributed systems and engineering leadership.",
+    description: "Senior Engineering Manager at Adobe (Ashwin Das, Ashwin Gururaja) specializing in Payments & Risk with expertise in distributed systems and engineering leadership.",
     creator: "@ashwindas",
     images: ['https://ashwindas.github.io/images/headshot.jpg'],
   },
@@ -84,7 +84,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        <meta name="description" content="Ashwin Das Chikkerahally Gururaja is a Senior Engineering Manager at Adobe specializing in payments, risk, and distributed systems. Engineering leader with expertise in fraud prevention and developer productivity." />
+        <meta name="description" content="Ashwin Das Chikkerahally Gururaja (also known as Ashwin Das, Ashwin Gururaja, Ashwin Das Gururaja) is a Senior Engineering Manager at Adobe specializing in payments, risk, and fraud prevention systems." />
         
         {/* Add color-scheme meta tag to ensure proper theme detection */}
         <meta name="color-scheme" content="dark light" />
@@ -143,7 +143,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Ashwin Das Chikkerahally Gururaja",
-              "alternateName": "Ashwin Das Gururaja",
+              "alternateName": ["Ashwin Das Gururaja", "Ashwin Das", "Ashwin Gururaja"],
               "jobTitle": "Senior Engineering Manager",
               "worksFor": {
                 "@type": "Organization",
@@ -206,11 +206,12 @@ export default function RootLayout({
             <footer className="bg-base-200 dark:bg-base-300 py-6 text-base-content dark:text-gray-200">
               <div className="container mx-auto px-4 text-center">
                 <p className="text-sm text-base-content dark:text-gray-200">
-                  &copy; {new Date().getFullYear()} Ashwin Das Gururaja. All Rights Reserved.
+                  &copy; {new Date().getFullYear()} Ashwin Das Chikkerahally Gururaja. All Rights Reserved.
                 </p>
                 <p className="text-xs mt-2 text-base-content dark:text-gray-200">
                   <a href="/privacy.html" className="link link-hover link-primary">Privacy Policy</a>
                 </p>
+                <p className="sr-only">Also known as Ashwin Das, Ashwin Gururaja, and Ashwin Das Gururaja</p>
               </div>
             </footer>
           </div>
