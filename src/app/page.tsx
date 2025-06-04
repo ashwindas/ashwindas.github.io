@@ -3,6 +3,7 @@ import { EmailButton } from '../components/EmailButton'
 import { LinkedInButton } from '../components/LinkedInButton'
 import { FiveHundredPxButton } from '../components/FiveHundredPxButton'
 import { FiveHundredPxGallery } from '../components/FiveHundredPxGallery'
+import { MediaFeatures } from '../components/MediaFeatures'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -63,6 +64,12 @@ export default function Home() {
                 className="btn btn-primary min-w-[140px]"
               >
                 Hackathons
+              </ScrollButton>
+              <ScrollButton
+                targetId="media"
+                className="btn btn-primary min-w-[140px]"
+              >
+                Media
               </ScrollButton>
               <LinkedInButton className="btn-primary !bg-[#0077B5] hover:!bg-[#0069a1] min-w-[140px]" />
             </div>
@@ -252,6 +259,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Features in Media Section */}
+      <MediaFeatures />
+
       {/* Contact Section */}
       <section id="contact" className="py-12 bg-base-100 dark:bg-base-200">
         <div className="container mx-auto px-4">
@@ -269,62 +279,62 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center text-base-content dark:text-gray-100">Conferences</h2>
           <div className="space-y-12">
-            {/* Speaker Section */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Speaker</h3>
-              <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-                <a 
-                  href="https://futureofconversationalai.com/FOCCAS2025.2/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-between">
-                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Future of Chatbots and Conversational AI Summit 2025</h3>
-                      <div className="badge badge-primary">Speaker</div>
-                    </div>
-                    <p className="text-sm text-base-content dark:text-gray-200">
-                      <span className="inline-block mr-2">📍 San Francisco</span>
-                    </p>
+          {/* Speaker Section */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Speaker</h3>
+            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+              <a 
+                href="https://futureofconversationalai.com/FOCCAS2025.2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Future of Chatbots and Conversational AI Summit 2025</h3>
+                    <div className="badge badge-primary">Speaker</div>
                   </div>
-                </a>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 San Francisco</span>
+                  </p>
+                </div>
+              </a>
 
-                <a 
-                  href="https://www.clarionevents-leaderssummit.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-between">
-                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Payment & Fraud Leaders Summit 2025</h3>
-                      <div className="badge badge-primary">Speaker</div>
-                    </div>
-                    <p className="text-sm text-base-content dark:text-gray-200">
-                      <span className="inline-block mr-2">📍 Miami</span>
-                    </p>
+              <a 
+                href="https://www.clarionevents-leaderssummit.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Payment & Fraud Leaders Summit 2025</h3>
+                    <div className="badge badge-primary">Speaker</div>
                   </div>
-                </a>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Miami</span>
+                  </p>
+                </div>
+              </a>
 
-                <a 
+              <a 
                   href="https://scrs.in/conference/AIC2025/speaker/talk/1083"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-between">
-                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">IEEE World Conference on Applied Intelligence and Computing (AIC 2025)</h3>
-                      <div className="badge badge-primary">Speaker</div>
-                    </div>
-                    <p className="text-sm text-base-content dark:text-gray-200">
-                      <span className="inline-block mr-2">📍 Delhi, India</span>
-                    </p>
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">IEEE World Conference on Applied Intelligence and Computing (AIC 2025)</h3>
+                    <div className="badge badge-primary">Speaker</div>
                   </div>
-                </a>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Delhi, India</span>
+                  </p>
+                </div>
+              </a>
 
-                <a 
+              <a 
                   href="https://www.conf42.com/Observability_2025_Ashwin_Das_Gururaja_Devang_Gaur_dashboard_payment_commerce"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -360,44 +370,44 @@ export default function Home() {
 
                 <a 
                   href="https://scrs.in/conference/CVR2025/speaker/talk/1099"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-between">
-                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Computer Vision and Robotics (CVR 2025)</h3>
-                      <div className="badge badge-primary">Speaker</div>
-                    </div>
-                    <p className="text-sm text-base-content dark:text-gray-200">
-                      <span className="inline-block mr-2">📍 NIT Goa, India</span>
-                    </p>
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Computer Vision and Robotics (CVR 2025)</h3>
+                    <div className="badge badge-primary">Speaker</div>
                   </div>
-                </a>
-              </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 NIT Goa, India</span>
+                  </p>
+                </div>
+              </a>
             </div>
+          </div>
 
-            {/* Session Chair / Judge Section */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Session Chair / Judge</h3>
-              <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-                <a 
-                  href="https://scrs.in/public/conference/bida2025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
-                >
-                  <div className="card-body">
-                    <div className="flex items-center justify-between">
-                      <h3 className="card-title text-xl text-base-content dark:text-gray-100">Business Intelligence and Data Analytics (BIDA 2025)</h3>
-                      <div className="badge badge-primary">Session Chair</div>
-                    </div>
-                    <p className="text-sm text-base-content dark:text-gray-200">
-                      <span className="inline-block mr-2">📍 Bangalore, India</span>
-                    </p>
+          {/* Session Chair / Judge Section */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Session Chair / Judge</h3>
+            <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+              <a 
+                href="https://scrs.in/public/conference/bida2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Business Intelligence and Data Analytics (BIDA 2025)</h3>
+                    <div className="badge badge-primary">Session Chair</div>
                   </div>
-                </a>
-              </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Bangalore, India</span>
+                  </p>
+                </div>
+              </a>
+            </div>
             </div>
           </div>
         </div>
