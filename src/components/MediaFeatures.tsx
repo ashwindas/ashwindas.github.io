@@ -43,34 +43,7 @@ const defaultFeatures: MediaFeature[] = [
     logoSrc: '/images/logos/leaddev-logo.png',
     url: 'https://leaddev.com/leadership/why-leaders-trust-ai-more-than-their-colleagues',
     date: ''
-  },
-  {
-    id: 'payment-journal-1',
-    title: 'Payment Journal',
-    publication: 'Payment Journal',
-    description: "Article on the evolution of commerce platforms and emerging payment technologies.",
-    logoSrc: '/images/logos/payment-journal-logo.png',
-    url: '#',
-    date: '2024'
-  },
-  {
-    id: 'dev-insights-1',
-    title: 'Developer Insights',
-    publication: 'Developer Insights',
-    description: "Shared perspectives on mentoring engineers and creating a culture of technical excellence.",
-    logoSrc: '/images/logos/dev-insights-logo.png',
-    url: '#',
-    date: '2024'
-  },
-  {
-    id: 'industry-today-1',
-    title: 'Industry Today',
-    publication: 'Industry Today',
-    description: "Featured in discussion about the future of digital commerce and payment innovation.",
-    logoSrc: '/images/logos/industry-today-logo.png',
-    url: '#',
-    date: '2024'
-  },
+  }
 ]
 
 export function MediaFeatures({ features = defaultFeatures }: MediaFeaturesProps) {
