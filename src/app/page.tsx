@@ -407,6 +407,19 @@ export default function Home() {
                   </p>
                 </div>
               </a>
+              <a 
+                href="https://scrs.in/conference/icivc2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Intelligent Vision and Computing (ICIVC 2025)</h3>
+                    <div className="badge badge-primary">Session Chair</div>
+                  </div>
+                </div>
+              </a>
             </div>
             </div>
           </div>
