@@ -418,6 +418,9 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">Intelligent Vision and Computing (ICIVC 2025)</h3>
                     <div className="badge badge-primary">Session Chair</div>
                   </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Dehradun, India</span>
+                  </p>
                 </div>
               </a>
             </div>
