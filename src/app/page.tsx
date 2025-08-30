@@ -284,6 +284,23 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Speaker</h3>
             <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
               <a 
+                href="https://events.merchantriskcouncil.org/event/38b264d1-3a0c-49f0-bd97-1faccb84a255/speakers?session=7e830ec4-94bc-428d-af36-07d61e4f63d8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC San Diego 2025</h3>
+                    <div className="badge badge-primary">Speaker</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 San Diego</span>
+                  </p>
+                </div>
+              </a>
+
+              <a 
                 href="https://futureofconversationalai.com/FOCCAS2025.2/"
                 target="_blank"
                 rel="noopener noreferrer"
