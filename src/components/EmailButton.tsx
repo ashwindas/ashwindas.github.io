@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { trackEmailClick } from './GoogleAnalytics'
 
 interface EmailButtonProps {
   className?: string;
@@ -8,6 +9,9 @@ interface EmailButtonProps {
 
 export const EmailButton = ({ className = '' }: EmailButtonProps) => {
   const handleEmailClick = () => {
+    // Track email click event
+    trackEmailClick()
+    
     // Split email into parts to avoid scraping
     const parts = ['ashwindas', 'cg', 'gmail.com'];
     window.location.href = `mailto:${parts[0]}${parts[1]}@${parts[2]}`;

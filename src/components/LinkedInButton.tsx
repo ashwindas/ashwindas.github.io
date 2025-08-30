@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { trackExternalLink } from './GoogleAnalytics'
 
 interface LinkedInButtonProps {
   className?: string;
@@ -9,11 +10,16 @@ interface LinkedInButtonProps {
 export const LinkedInButton = ({ className = '' }: LinkedInButtonProps) => {
   const linkedInUrl = "https://www.linkedin.com/in/ashwindas/"
   
+  const handleLinkedInClick = () => {
+    trackExternalLink(linkedInUrl, 'LinkedIn Profile')
+  }
+  
   return (
     <a
       href={linkedInUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleLinkedInClick}
       className={`btn bg-[#0077B5] hover:bg-[#0069a1] text-white border-none flex items-center gap-2 ${className}`}
       aria-label="Visit my LinkedIn profile"
     >

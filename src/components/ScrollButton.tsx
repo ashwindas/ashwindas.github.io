@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { trackNavigation } from './GoogleAnalytics'
 
 type ScrollButtonProps = {
   targetId: string
@@ -15,6 +16,9 @@ export function ScrollButton({ targetId, className, style, children, onClick }: 
     e.preventDefault()
     
     console.log(`Attempting to scroll to ${targetId}`)
+    
+    // Track navigation click
+    trackNavigation(targetId)
     
     // Run additional onClick handler if provided
     if (onClick) {

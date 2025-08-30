@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ScrollButton } from './ScrollButton'
+import { trackThemeToggle } from './GoogleAnalytics'
 
 export function Navigation() {
   const [mounted, setMounted] = useState(false)
@@ -61,6 +62,10 @@ export function Navigation() {
   const toggleTheme = () => {
     // Let next-themes handle the update
     const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+    
+    // Track theme change
+    trackThemeToggle(newTheme)
+    
     setTheme(newTheme)
     
     // Force a page reload to apply the theme globally

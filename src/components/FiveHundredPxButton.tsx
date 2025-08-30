@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { trackExternalLink } from './GoogleAnalytics'
 
 interface FiveHundredPxButtonProps {
   className?: string;
@@ -9,11 +10,16 @@ interface FiveHundredPxButtonProps {
 export const FiveHundredPxButton = ({ className = '' }: FiveHundredPxButtonProps) => {
   const fiveHundredPxUrl = "https://500px.com/p/AshwinDas"
   
+  const handleFiveHundredPxClick = () => {
+    trackExternalLink(fiveHundredPxUrl, '500px Photography Portfolio')
+  }
+  
   return (
     <a
       href={fiveHundredPxUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleFiveHundredPxClick}
       className={`btn bg-[#0099e5] hover:bg-[#0078b5] text-white border-none flex items-center gap-2 ${className}`}
       aria-label="Visit my 500px photography portfolio"
     >
