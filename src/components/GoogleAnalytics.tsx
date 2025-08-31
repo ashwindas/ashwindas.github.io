@@ -3,6 +3,7 @@
 import Script from 'next/script'
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
+import { useConsent } from '../hooks/useConsent'
 
 // Enhanced type definition for gtag with all event types
 declare global {
@@ -20,13 +21,30 @@ declare global {
 // You can find this in your GA4 property settings under "Data Streams" > "Web"
 const GA_MEASUREMENT_ID = 'G-QBT0LK6T2W'
 
-// Analytics event tracking functions
+// Analytics event tracking functions - only tracks if consent is given
 export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, {
-      ...parameters,
-      send_to: GA_MEASUREMENT_ID,
-    })
+  try {
+    // Check if user has consented to analytics
+    const consentData = localStorage.getItem('analytics-consent')
+    let hasAnalyticsConsent = false
+    
+    if (consentData) {
+      try {
+        const parsed = JSON.parse(consentData)
+        hasAnalyticsConsent = parsed.analytics === true
+      } catch {
+        console.warn('Failed to parse consent data')
+      }
+    }
+
+    if (typeof window !== 'undefined' && window.gtag && hasAnalyticsConsent) {
+      window.gtag('event', eventName, {
+        ...parameters,
+        send_to: GA_MEASUREMENT_ID,
+      })
+    }
+  } catch (error) {
+    console.warn('Analytics tracking failed:', error)
   }
 }
 
@@ -87,10 +105,13 @@ export const trackPortfolioInteraction = (action: string, itemName?: string) => 
 function GoogleAnalyticsInner() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const { consent } = useConsent()
 
-  // Track scroll depth
+  // Track scroll depth - only if analytics consent is given
   useEffect(() => {
-    let scrollDepthTracked = {
+    if (!consent.analytics) return
+
+    const scrollDepthTracked = {
       25: false,
       50: false,
       75: false,
@@ -105,8 +126,8 @@ function GoogleAnalyticsInner() {
       // Track milestone percentages
       Object.keys(scrollDepthTracked).forEach(milestone => {
         const percent = parseInt(milestone)
-        if (scrollPercent >= percent && !scrollDepthTracked[percent]) {
-          scrollDepthTracked[percent] = true
+        if (scrollPercent >= percent && !scrollDepthTracked[percent as keyof typeof scrollDepthTracked]) {
+          scrollDepthTracked[percent as keyof typeof scrollDepthTracked] = true
           trackScrollDepth(percent)
         }
       })
@@ -126,12 +147,14 @@ function GoogleAnalyticsInner() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [consent.analytics])
 
-  // Track time on page
+  // Track time on page - only if analytics consent is given
   useEffect(() => {
+    if (!consent.analytics) return
+
     const startTime = Date.now()
-    let timeTracked = {
+    const timeTracked = {
       30: false,  // 30 seconds
       60: false,  // 1 minute
       180: false, // 3 minutes
@@ -143,25 +166,26 @@ function GoogleAnalyticsInner() {
       
       Object.keys(timeTracked).forEach(milestone => {
         const seconds = parseInt(milestone)
-        if (timeOnPage >= seconds && !timeTracked[seconds]) {
-          timeTracked[seconds] = true
+        if (timeOnPage >= seconds && !timeTracked[seconds as keyof typeof timeTracked]) {
+          timeTracked[seconds as keyof typeof timeTracked] = true
           trackTimeOnPage(seconds)
         }
       })
     }, 5000) // Check every 5 seconds
 
     return () => clearInterval(interval)
-  }, [pathname])
+  }, [pathname, consent.analytics])
 
-  // Track page views
+  // Track page views - only if analytics consent is given
   useEffect(() => {
-    if (pathname && window.gtag) {
+    if (pathname && window.gtag && consent.analytics) {
       // Send pageview with updated path
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_path: pathname + (searchParams?.toString() || ''),
+        anonymize_ip: true, // IP anonymization for privacy
       })
     }
-  }, [pathname, searchParams])
+  }, [pathname, searchParams, consent.analytics])
 
   return null
 }
@@ -182,8 +206,21 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Set default consent to denied
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              functionality_storage: 'granted',
+              security_storage: 'granted',
+              wait_for_update: 500
+            });
+            
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname + window.location.search,
+              anonymize_ip: true,
+              allow_google_signals: false,
+              allow_ad_personalization_signals: false
             });
           `,
         }}

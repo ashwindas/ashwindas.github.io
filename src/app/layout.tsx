@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { Navigation } from "@/components/Navigation";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { ConsentBanner } from "@/components/ConsentBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -216,7 +217,12 @@ export default function RootLayout({
             </footer>
           </div>
         </Providers>
-        {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <GoogleAnalytics />
+            <ConsentBanner />
+          </>
+        )}
       </body>
     </html>
   );
