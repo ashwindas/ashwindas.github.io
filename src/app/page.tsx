@@ -335,6 +335,23 @@ export default function Home() {
               </a>
 
               <a 
+                href="https://groupfuturistaevent.com/FODPFM2025/#speakers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Future of Digital Payment Fraud Management Summit 2025</h3>
+                    <div className="badge badge-primary">Speaker</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Virtual US Edition</span>
+                  </p>
+                </div>
+              </a>
+
+              <a 
                   href="https://scrs.in/conference/AIC2025/speaker/talk/1083"
                 target="_blank"
                 rel="noopener noreferrer"
