@@ -318,7 +318,7 @@ export default function Home() {
               </a>
 
               <a 
-                href="https://www.clarionevents-leaderssummit.com/"
+                href="https://www.fraud-leaderssummit.com/fls-june-2025/panel-discussion-mission-gone-60-seconds-rapid-rise-real-time-fraud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
