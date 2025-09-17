@@ -359,7 +359,7 @@ export default function Home() {
               >
                 <div className="card-body">
                   <div className="flex items-center justify-between">
-                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Plug and Play - Agentic Commerce Workshop</h3>
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">Plug and Play - Agentic Commerce Deep Dive</h3>
                     <div className="badge badge-primary">Speaker</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">
