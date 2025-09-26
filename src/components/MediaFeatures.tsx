@@ -43,6 +43,15 @@ const defaultFeatures: MediaFeature[] = [
     logoSrc: '/images/logos/leaddev-logo.png',
     url: 'https://leaddev.com/leadership/why-leaders-trust-ai-more-than-their-colleagues',
     date: ''
+  },
+  {
+    id: 'saipien-1',
+    title: 'AI Agents as Smart Assistants: Boosting Business Automation with Human Oversight',
+    publication: 'saipien',
+    description: "Featured insights on AI agents as collaborative teammates, emphasizing their role as co-pilots that speed up processes while requiring human oversight for complex tasks and strategic planning.",
+    logoSrc: 'https://saipien.org/favicon.ico',
+    url: 'https://saipien.org/ai-agents-as-smart-assistants-boosting-business-automation-with-human-oversight/',
+    date: ''
   }
 ]
 

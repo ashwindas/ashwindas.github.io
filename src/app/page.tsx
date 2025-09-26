@@ -454,7 +454,7 @@ export default function Home() {
                     <div className="badge badge-primary">Session Chair</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">
-                    <span className="inline-block mr-2">📍 Bangalore, India</span>
+                    <span className="inline-block mr-2">📍 RV Institute of Management (RVIM), Bangalore, India</span>
                   </p>
                 </div>
               </a>
@@ -470,7 +470,23 @@ export default function Home() {
                     <div className="badge badge-primary">Session Chair</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">
-                    <span className="inline-block mr-2">📍 Dehradun, India</span>
+                    <span className="inline-block mr-2">📍 The ICFAI University, Dehradun, India</span>
+                  </p>
+                </div>
+              </a>
+              <a 
+                href="https://scrs.in/conference/iccis2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100 flex-1">Communication and Intelligent Systems (ICCIS 2025)</h3>
+                    <div className="badge badge-primary flex-shrink-0">Session Chair</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 BITS Pilani, K K Birla Goa Campus, India</span>
                   </p>
                 </div>
               </a>
