@@ -533,6 +533,31 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Judge</h3>
             <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
               <a 
+                href="https://ai-verse-hackathon.vercel.app/judges.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <figure className="relative w-full h-[120px] bg-white flex items-center justify-center">
+                  <div className="relative w-[500px] h-[100px]">
+                    <Image
+                      src="/images/ai-verse-2.0-hackathon-banner.png"
+                      alt="AI-VERSE 2.0 Hackathon Banner"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </figure>
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">AI-VERSE 2.0 - By BMS College Of Engineering</h3>
+                    <div className="badge badge-primary">Judge</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">October 24 - 26, 2025</p>
+                </div>
+              </a>
+
+              <a 
                 href="https://ai-valley-hackathon.devpost.com/"
                 target="_blank"
                 rel="noopener noreferrer"
