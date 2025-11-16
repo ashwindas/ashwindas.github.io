@@ -164,6 +164,24 @@ export function Navigation() {
             </li>
             <li>
               <ScrollButton
+                targetId="conferences"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                Conferences
+              </ScrollButton>
+            </li>
+            <li>
+              <ScrollButton
+                targetId="publications"
+                className="text-base-content"
+                onClick={() => handleSectionNav()}
+              >
+                Publications
+              </ScrollButton>
+            </li>
+            <li>
+              <ScrollButton
                 targetId="contact"
                 className="text-base-content"
                 onClick={() => handleSectionNav()}
@@ -201,6 +219,22 @@ export function Navigation() {
               className="text-base-content"
             >
               Photography
+            </ScrollButton>
+          </li>
+          <li>
+            <ScrollButton
+              targetId="conferences"
+              className="text-base-content"
+            >
+              Conferences
+            </ScrollButton>
+          </li>
+          <li>
+            <ScrollButton
+              targetId="publications"
+              className="text-base-content"
+            >
+              Publications
             </ScrollButton>
           </li>
           <li>

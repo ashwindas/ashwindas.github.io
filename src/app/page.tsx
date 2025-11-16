@@ -4,6 +4,7 @@ import { LinkedInButton } from '../components/LinkedInButton'
 import { FiveHundredPxButton } from '../components/FiveHundredPxButton'
 import { FiveHundredPxGallery } from '../components/FiveHundredPxGallery'
 import { MediaFeatures } from '../components/MediaFeatures'
+import { Publications } from '../components/Publications'
 import Image from 'next/image'
 
 // Remove dynamic directive for static export compatibility
@@ -58,6 +59,12 @@ export default function Home() {
                 className="btn btn-primary min-w-[140px]"
               >
                 Conferences
+              </ScrollButton>
+              <ScrollButton
+                targetId="publications"
+                className="btn btn-primary min-w-[140px]"
+              >
+                Publications
               </ScrollButton>
               <ScrollButton
                 targetId="hackathons"
@@ -335,6 +342,23 @@ export default function Home() {
               </a>
 
               <a 
+                href="https://events.merchantriskcouncil.org/event/e1cf4439-3cf9-43cd-9d9e-4a9c46e255c0/speakers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Virtual Summit: Payments Orchestration</h3>
+                    <div className="badge badge-primary">Speaker</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Virtual</span>
+                  </p>
+                </div>
+              </a>
+
+              <a 
                 href="https://groupfuturistaevent.com/FODPFM2025/#speakers"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -495,6 +519,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Publications Section */}
+      <Publications />
 
       {/* Hackathons Section */}
       <section id="hackathons" className="py-24 bg-base-200 dark:bg-base-100">
