@@ -575,7 +575,7 @@ export default function Home() {
                 </figure>
                 <div className="card-body">
                   <div className="flex items-center justify-between">
-                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">AI Valley Hackathon - By Carnegie Mellon University Students</h3>
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">AI Valley Hackathon - By Carnegie Mellon University</h3>
                     <div className="badge badge-primary">Judge</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">April 19 - 20, 2025</p>
