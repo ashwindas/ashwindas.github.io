@@ -18,6 +18,23 @@ interface PublicationsProps {
 
 const defaultPublications: Publication[] = [
   {
+    id: 'paypers-agentic-payments-2025',
+    title: 'From Optimisation to Autonomy: Building the Data Foundations for Agentic Payments',
+    publication: 'The Paypers',
+    description: 'Explains how payment systems must establish strong data foundations—including normalization, enrichment, and governance layers—to enable reliable autonomous payment orchestration. Argues that autonomy is only as reliable as the data behind it, and warns against deploying AI-driven systems without proper oversight and explainability controls.',
+    url: 'https://thepaypers.com/payments/expert-views/from-optimisation-to-autonomy-building-the-data-foundations-for-agentic-payments',
+    date: 'December 2025'
+  },
+  {
+    id: 'mrc-trusted-payment-chain-2025',
+    title: 'Building a Trusted Payment Chain: The Role of 3DS and Transaction IDs in Subscription Billing',
+    publication: 'MRC Blog',
+    description: 'Explains how 3D Secure authentication and network-generated transaction identifiers work together to improve authorization rates for recurring subscription payments. Addresses why these mechanisms are especially critical for subscription businesses operating in regions with Strong Customer Authentication requirements, such as Europe under PSD2.',
+    logoSrc: '/images/logos/mrc-logo.png',
+    url: 'https://merchantriskcouncil.org/learning/resource-center/member-news/blog/2025/building-a-trusted-payment-chain',
+    date: 'December 2025'
+  },
+  {
     id: 'mrc-nti-trace-id-2025',
     title: 'Boosting Authorization Success: A Practical Guide to Visa NTI and Mastercard Trace ID Mandates',
     publication: 'MRC Blog',
