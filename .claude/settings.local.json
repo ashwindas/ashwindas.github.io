@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{print $NF}')",
+      "Bash(grep -E \"\\\\.sh$|\\\\.config|deploy\")",
+      "Bash(find /Users/agururaj/Dropbox/workspace/ashwindas.github.io/src/components -type f -name \"*.tsx\" -exec wc -l {} +)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)"
+    ]
+  }
+}
