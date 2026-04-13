@@ -290,7 +290,58 @@ export default function Home() {
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-6 text-center text-base-content dark:text-gray-100">Speaker</h3>
             <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-              <a 
+              <a
+                href="https://events.merchantriskcouncil.org/event/9be82b97-3a06-4db6-8162-9880412b81b3/agenda?session=6e6a1b70-4c69-4ff7-bb07-ca608c9e9980"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Las Vegas 2026</h3>
+                    <div className="badge badge-primary">Speaker</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Las Vegas</span>
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="https://events.merchantriskcouncil.org/event/9be82b97-3a06-4db6-8162-9880412b81b3/agenda?session=da25b894-6d6a-4193-a125-88dedf6cbe20"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Las Vegas 2026</h3>
+                    <div className="badge badge-secondary">Panelist</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Las Vegas</span>
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="https://events.merchantriskcouncil.org/event/88aba26d-674c-46b1-9dd6-658209026535/agenda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card bg-base-300 dark:bg-base-300 shadow-xl hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden"
+              >
+                <div className="card-body">
+                  <div className="flex items-center justify-between">
+                    <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Virtual Summit AI 2026</h3>
+                    <div className="badge badge-secondary">Panelist</div>
+                  </div>
+                  <p className="text-sm text-base-content dark:text-gray-200">
+                    <span className="inline-block mr-2">📍 Virtual</span>
+                  </p>
+                </div>
+              </a>
+
+              <a
                 href="https://events.merchantriskcouncil.org/event/38b264d1-3a0c-49f0-bd97-1faccb84a255/speakers?session=7e830ec4-94bc-428d-af36-07d61e4f63d8"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -333,7 +384,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="flex items-center justify-between">
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">Payment & Fraud Leaders Summit 2025</h3>
-                    <div className="badge badge-primary">Speaker</div>
+                    <div className="badge badge-secondary">Panelist</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">
                     <span className="inline-block mr-2">📍 Miami</span>
@@ -350,7 +401,7 @@ export default function Home() {
                 <div className="card-body">
                   <div className="flex items-center justify-between">
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Virtual Summit: Payments Orchestration</h3>
-                    <div className="badge badge-primary">Speaker</div>
+                    <div className="badge badge-secondary">Panelist</div>
                   </div>
                   <p className="text-sm text-base-content dark:text-gray-200">
                     <span className="inline-block mr-2">📍 Virtual</span>
