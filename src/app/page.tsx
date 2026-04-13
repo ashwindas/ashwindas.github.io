@@ -301,9 +301,10 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Las Vegas 2026</h3>
                     <div className="badge badge-primary">Speaker</div>
                   </div>
-                  <p className="text-sm text-base-content dark:text-gray-200">
+                  <p className="text-sm text-base-content dark:text-gray-200 mb-1">
                     <span className="inline-block mr-2">📍 Las Vegas</span>
                   </p>
+                  <p className="text-sm text-base-content/70 dark:text-gray-400 italic">Safely Scaling Subscriptions in the Age of Agentic Commerce</p>
                 </div>
               </a>
 
@@ -318,9 +319,10 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Las Vegas 2026</h3>
                     <div className="badge badge-secondary">Panelist</div>
                   </div>
-                  <p className="text-sm text-base-content dark:text-gray-200">
+                  <p className="text-sm text-base-content dark:text-gray-200 mb-1">
                     <span className="inline-block mr-2">📍 Las Vegas</span>
                   </p>
+                  <p className="text-sm text-base-content/70 dark:text-gray-400 italic">Frameworks Shaping the Future of Digital Markets</p>
                 </div>
               </a>
 
@@ -335,9 +337,10 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Virtual Summit AI 2026</h3>
                     <div className="badge badge-secondary">Panelist</div>
                   </div>
-                  <p className="text-sm text-base-content dark:text-gray-200">
+                  <p className="text-sm text-base-content dark:text-gray-200 mb-1">
                     <span className="inline-block mr-2">📍 Virtual</span>
                   </p>
+                  <p className="text-sm text-base-content/70 dark:text-gray-400 italic">Agentic AI Is Reshaping eCommerce from Discovery to Delivery</p>
                 </div>
               </a>
 
@@ -352,9 +355,10 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC San Diego 2025</h3>
                     <div className="badge badge-primary">Speaker</div>
                   </div>
-                  <p className="text-sm text-base-content dark:text-gray-200">
+                  <p className="text-sm text-base-content dark:text-gray-200 mb-1">
                     <span className="inline-block mr-2">📍 San Diego</span>
                   </p>
+                  <p className="text-sm text-base-content/70 dark:text-gray-400 italic">Autonomous Commerce is Coming: How AI Agents Will Run Payments and Defeat Fraud</p>
                 </div>
               </a>
 
@@ -403,9 +407,10 @@ export default function Home() {
                     <h3 className="card-title text-xl text-base-content dark:text-gray-100">MRC Virtual Summit: Payments Orchestration</h3>
                     <div className="badge badge-secondary">Panelist</div>
                   </div>
-                  <p className="text-sm text-base-content dark:text-gray-200">
+                  <p className="text-sm text-base-content dark:text-gray-200 mb-1">
                     <span className="inline-block mr-2">📍 Virtual</span>
                   </p>
+                  <p className="text-sm text-base-content/70 dark:text-gray-400 italic">Agentic AI and Payment Orchestration: From Data Foundations to Autonomous Optimization</p>
                 </div>
               </a>
 
